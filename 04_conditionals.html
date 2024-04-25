@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>4&period; What is a conditional&quest;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <div id="index"></div>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+<h1 id="4-what-is-a-conditional">4. What is a conditional?</h1>
+<p>In JavaScript, conditionals allow us to make decisions and execute different actions based on specific conditions.</p>
+<p>Conditional statements <strong>control behavior</strong> in JavaScript and <strong>determine whether or not pieces of code can run</strong>.</p>
+<p><img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\conditional%20statements%20by%20Sessionstack%20Blog.webp" alt="conditional staments image">
+By SessionStack Blog</p>
+<br>
+<ul>
+<li><a href="#4-what-is-a-conditional">4. What is a conditional?</a></li>
+<li><a href="#41-syntax">4.1. Syntax</a>
+<ul>
+<li><a href="#comparison-operators">Comparison operators</a></li>
+</ul>
+</li>
+<li><a href="#42-types">4.2. Types</a>
+<ul>
+<li><a href="#the-if-statement">The &quot;if&quot; statement</a></li>
+<li><a href="#the-else-clause">The “else” clause</a></li>
+<li><a href="#several-conditions-else-if">Several conditions: “else if”</a></li>
+<li><a href="#switch-statements">Switch Statements</a></li>
+</ul>
+</li>
+<li><a href="#43-uses-of-js-conditionals">4.3. Uses of JS conditionals</a>
+<ul>
+<li><a href="#logical-and-operator">Logical AND operator</a></li>
+</ul>
+</li>
+<li><a href="#44-references">4.4. References</a></li>
+</ul>
+<br>
+<h1 id="41-syntax">4.1. Syntax</h1>
+<p>How to write an if else in JavaScript?</p>
+<p>To write a conditional in JavaScript, you must start with the reserved word <strong><code>if</code></strong> followed by the condition to be evaluated within <strong>parentheses</strong>. JavaScript uses curly  braces to open and close lines of code ( <code>{ }</code> ); You should also consider that <strong>conditions evaluate to true by default</strong> unless you indicate otherwise.</p>
+<p>If you want to evaluate a second contrary condition, use <strong><code>else</code></strong> but do not indicate the condition inside parentheses.</p>
+<p>Example</p>
+<pre><code class="language-JS"><span class="hljs-keyword">if</span>(<span class="hljs-literal">true</span>){
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Condición evaluada en true&quot;</span>);
+}<span class="hljs-keyword">else</span>{
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Se imprimirá este mensaje si la condición es false&quot;</span>);
+}
+</code></pre>
+<h2 id="comparison-operators">Comparison operators</h2>
+<p>Thery are placed inside of your conditionals and the left side and the right side these are both called operands.</p>
+<p>A comparison operator <strong>compares its operands and returns a logical value based on whether the comparison is true</strong>. The operands can be numerical, string, logical, or object values.</p>
+<ul>
+<li>
+<p><strong>===</strong> and <strong>!==</strong> — test if one value is identical to, or not identical to, another.</p>
+</li>
+<li>
+<p><strong>&lt;</strong> and <strong>&gt;</strong> — test if one value is less than or greater than another.</p>
+</li>
+<li>
+<p><strong>&lt;=</strong> and <strong>&gt;=</strong> — test if one value is less than or equal to, or greater than or equal to, another.</p>
+</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> age = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">var</span> ageTwo = <span class="hljs-string">&#x27;12&#x27;</span>;
+
+<span class="hljs-keyword">if</span> (age === ageTwo) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;They are equal&#x27;</span>);
+}
+
+<span class="hljs-keyword">if</span> (age !== ageTwo) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Not equal&#x27;</span>);
+}
+
+<span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">25</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Old enough to rent a car&#x27;</span>);
+}
+
+<span class="hljs-keyword">if</span> (age &lt;= <span class="hljs-number">10</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;You can eat from the kid menu&#x27;</span>);
+}
+</code></pre>
+<br>
+<p><strong>NOTE</strong>: You can also learn about another coparison operator, the <a href="#43-uses-of-js-conditionals">**logical AND operator (&amp;&amp;) in the <em>Uses section</em> here.</a></p>
+<br>
+<h1 id="42-types">4.2. Types</h1>
+<p>Conditional statements control behavior in JavaScript and determine whether or not pieces of code can run.</p>
+<p>There are multiple different types of conditionals in JavaScript that we can use:</p>
+<ul>
+<li><strong><code>if</code></strong> , <strong><code>else</code></strong> and <strong><code>else if</code></strong> statements</li>
+<li>the (<strong><code>?</code></strong>) <strong>Ternary (conditional) Operator</strong>, that’s also called a “question mark” operator. <a href="05_ternary_operator.html">Check here to learn about it.</a></li>
+<li>And we can also use the <strong>Switch Statements</strong>.</li>
+<li>We also have <code>For loop</code> and <code>While loop</code>. We´ll see them later in the course.</li>
+</ul>
+<br>
+<p>The most common type of conditional statement you'll use in JavaScript is: <strong>if...else statement.</strong></p>
+<h2 id="the-if-statement">The &quot;if&quot; statement</h2>
+<p>As the name suggests, a piece of data must meet a condition (is true) to execute certain code.</p>
+<p><strong>Basic if...else syntax:</strong></p>
+<pre><code class="language-JS"><span class="hljs-keyword">if</span> (condition) {
+  <span class="hljs-comment">/* code to run if condition is true */</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">/* run some other code instead */</span>
+}
+</code></pre>
+<p>For example:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> year = <span class="hljs-title function_">prompt</span>(<span class="hljs-string">&#x27;In which year did an astronaut first set foot on the moon?&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);
+
+<span class="hljs-keyword">if</span> (year == <span class="hljs-number">1969</span>) <span class="hljs-title function_">alert</span>( <span class="hljs-string">&#x27;You are right!&#x27;</span> );
+</code></pre>
+<p>Here the if(...) statement evaluates the condition in parentheses (year == 1969) and, if the result is true, executes a block of code (alert ( &quot;You are right!&quot;))</p>
+<p>As mentioned earlier it is recommended to wrapp your code block with curly braces <code>{}</code> every time you use an <code>if</code> statement, even if there is only one statement to execute. Doing so improves readability.</p>
+<pre><code class="language-JS">
+<span class="hljs-keyword">if</span> (year == <span class="hljs-number">2015</span>) {
+  <span class="hljs-title function_">alert</span>( <span class="hljs-string">&quot;That&#x27;s correct!&quot;</span> );
+  <span class="hljs-title function_">alert</span>( <span class="hljs-string">&quot;You&#x27;re so smart!&quot;</span> );
+}
+
+</code></pre>
+<br>
+<p><strong>Boolean conversion</strong></p>
+<p>The if (…) statement evaluates the expression in its parentheses and converts the result to a boolean.</p>
+<p>The conversion rules are:</p>
+<p>A number <strong>0, an empty string &quot;&quot;, null, undefined, and NaN</strong> all become <strong>false</strong>. Because of that they are called <strong>“falsy”</strong> values.</p>
+<p>Other values become <strong>true</strong>, so they are called “truthy”.</p>
+<pre><code class="language-JS"><span class="hljs-comment">// The code under this condition would never execute:</span>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-number">0</span>) { <span class="hljs-comment">// 0 is falsy</span>
+  ...
+}
+
+<span class="hljs-comment">// and inside this condition – it always will:</span>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-number">1</span>) { <span class="hljs-comment">// 1 is truthy</span>
+  ...
+}
+</code></pre>
+<p>Any value that is not false, undefined, null, 0, NaN, or an empty string ('') actually returns true when tested as a conditional statement, therefore <strong>you can use a variable name on its own to test whether it is true</strong>, <strong>or even that it exists</strong> (that is, it is not undefined.)</p>
+<p>So for example:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> cheese = <span class="hljs-string">&quot;Cheddar&quot;</span>;
+
+<span class="hljs-keyword">if</span> (cheese) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Yay! Cheese available for making cheese on toast.&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;No cheese on toast for you today.&quot;</span>);
+}
+</code></pre>
+<h2 id="the-else-clause">The “else” clause</h2>
+<p>The if statement may contain an optional <strong>else</strong> block. It executes when the condition is falsy.</p>
+<p>For example:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> year = <span class="hljs-title function_">prompt</span>(<span class="hljs-string">&#x27;In which year did an astronaut first set foot on the moon?&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);
+
+<span class="hljs-keyword">if</span> (year == <span class="hljs-number">1969</span>) {
+  <span class="hljs-title function_">alert</span>( <span class="hljs-string">&#x27;You guessed it right!&#x27;</span> );
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-title function_">alert</span>( <span class="hljs-string">&#x27;How can you be so wrong?&#x27;</span> ); <span class="hljs-comment">// any value except 1969</span>
+}
+</code></pre>
+<h2 id="several-conditions-else-if">Several conditions: “else if”</h2>
+<p>Sometimes, we’d like to test several variants of a condition. The <strong>else if</strong> clause lets us do that. This specifies a new test if the first condition is false.</p>
+<p>For example:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> year = <span class="hljs-title function_">prompt</span>(<span class="hljs-string">&#x27;In which year did an astronaut first set foot on the moon?&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);
+
+<span class="hljs-keyword">if</span> (year &lt; <span class="hljs-number">1969</span>) {
+  <span class="hljs-title function_">alert</span>( <span class="hljs-string">&#x27;Too early...&#x27;</span> );
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (year &gt; <span class="hljs-number">1969</span>) {
+  <span class="hljs-title function_">alert</span>( <span class="hljs-string">&#x27;Too late&#x27;</span> );
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-title function_">alert</span>( <span class="hljs-string">&#x27;Exactly!&#x27;</span> );
+}
+</code></pre>
+<p>In the code above, JavaScript first checks year &lt; 1969. If that is falsy, it goes to the next condition year &gt; 1969. If that is also falsy, it shows the last alert.</p>
+<p>There can be more <strong>else if</strong> blocks. The final else is optional.</p>
+<p>Another example, this time, with several <strong>if.. else if</strong> type of conditional or <strong>Compund conditionals</strong>:</p>
+<p>We set up a full range of scenarios. It will check if, you are old enough to eat from the kids' menu, if you're old enough to drive, and if you're old enough to rent a car. Then set up different types of age <strong>ranges</strong>.</p>
+<pre><code class="language-Js"><span class="hljs-keyword">var</span> age = <span class="hljs-number">30</span>;
+
+<span class="hljs-keyword">if</span> (age &lt;= <span class="hljs-number">10</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You can eat from the kid&#x27;s menu&quot;</span>);
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You are not old enough to drive&quot;</span>);
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You are not old enough to rent a car&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">16</span> &amp;&amp; age &lt; <span class="hljs-number">25</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You can not eat from the kid&#x27;s menu&quot;</span>);
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You are old enough to drive&quot;</span>);
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You are not old enough to rent a car&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">25</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You can not eat from the kid&#x27;s menu&quot;</span>);
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You are old enough to drive&quot;</span>);
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You are old enough to rent a car&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">11</span> &amp;&amp; age &lt;= <span class="hljs-number">15</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You can eat from the kid&#x27;s menu&quot;</span>);
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You are not old enough to drive&quot;</span>);
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You are not old enough to rent a car&quot;</span>);
+}
+</code></pre>
+<p>In summary <strong>if...else</strong> statements are mainly good for cases where you've got a couple of choices, and each one requires a reasonable amount of code to be run, and/or the conditions are complex (for example, multiple logical operators).</p>
+<p>However for cases where you just want to set a variable to a certain choice of value or print out a particular statement depending on a condition (ONLY ONE), the syntax can be a bit cumbersome, especially if you've got a large number of choices.</p>
+<p>In such a case, switch statements are a better option.</p>
+<h2 id="switch-statements">Switch Statements</h2>
+<p>They take <strong>a single expression/value as an input</strong>, and then look through several choices until they find one that matches that value, executing the corresponding code that goes along with it.</p>
+<p>Syntax:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">switch</span> (value) {
+  <span class="hljs-keyword">case</span> <span class="hljs-attr">option1</span>:
+    <span class="hljs-comment">// Code for option1</span>
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-attr">option2</span>:
+    <span class="hljs-comment">// Code for option2</span>
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-comment">// ... more cases ...</span>
+  <span class="hljs-attr">default</span>:
+    <span class="hljs-comment">// Code if none of the cases match</span>
+}
+</code></pre>
+<p>Here we've got:</p>
+<ul>
+<li>The keyword <strong><code>switch</code></strong>, followed by a set of parentheses.</li>
+<li>An expression or <strong>value</strong> inside the parentheses.</li>
+<li>The keyword <strong><code>case</code></strong>, followed by a choice that the expression/value could be, followed by a colon(:).</li>
+<li>Some code to run if the choice matches the expression.</li>
+<li>A <strong>break</strong> statement, followed by a semicolon. If the previous choice matches the expression/value, the browser stops executing the code block here, and moves on to any code that appears below the switch statement.</li>
+<li>As many other cases..... as you like.</li>
+<li>The keyword <strong><code>default</code></strong>, followed by exactly the same code pattern as one of the cases (option 1, option2), except that default does not have a choice after it, and you don't need the break statement. It runs if none of the choices match.</li>
+</ul>
+<pre><code class="language-Note">NOTE: You don't have to include the default section — you can safely omit it if there is no chance that the expression could end up equaling an unknown value. If there is a chance of this, however, you need to include it to handle unknown cases.
+</code></pre>
+<br>
+<p>Let´s see an example where we have multiple conditions to check against a single value (dayOfWeek:
+)</p>
+<pre><code class="language-JS"><span class="hljs-keyword">const</span> dayOfWeek = <span class="hljs-string">&quot;Monday&quot;</span>;
+<span class="hljs-keyword">switch</span> (dayOfWeek) {
+  <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Monday&quot;</span>:
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;It&#x27;s the start of the week!&quot;</span>);
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Friday&quot;</span>:
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Weekend is almost here!&quot;</span>);
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-attr">default</span>:
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;It&#x27;s a regular day.&quot;</span>);
+}
+</code></pre>
+<p>Now let´s see a real example with both the JavaScript script and HTML codes:</p>
+<p><img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\screenshot%20simple%20switch%20sample%20.png" alt="Simple Switch example"></p>
+<p>Screenshot of a simple <strong>Switch example</strong> from <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals#switch_statements">mdn web docs</a>. You can see it <a href="https://mdn.github.io/learning-area/javascript/building-blocks/simple-switch.html">running live here.</a></p>
+<p>Here is the code of the above example:</p>
+<pre><code class="language-HTML">
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en-US&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Simple switch example<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;weather&quot;</span>&gt;</span>Select the weather type today: <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;weather&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>--Make a choice--<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;sunny&quot;</span>&gt;</span>Sunny<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;rainy&quot;</span>&gt;</span>Rainy<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;snowing&quot;</span>&gt;</span>Snowing<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;overcast&quot;</span>&gt;</span>Overcast<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+      <span class="hljs-keyword">const</span> select = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;select&#x27;</span>);
+      <span class="hljs-keyword">const</span> para = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;p&#x27;</span>);
+
+      select.<span class="hljs-property">onchange</span> = setWeather;
+
+      <span class="hljs-keyword">function</span> <span class="hljs-title function_">setWeather</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">const</span> choice = select.<span class="hljs-property">value</span>;
+
+        <span class="hljs-keyword">switch</span>(choice) {
+          <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;sunny&#x27;</span>:
+            para.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.&#x27;</span>;
+            <span class="hljs-keyword">break</span>;
+          <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;rainy&#x27;</span>:
+            para.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;Rain is falling outside; take a rain coat and a brolly, and don\&#x27;t stay out for too long.&#x27;</span>;
+            <span class="hljs-keyword">break</span>;
+          <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;snowing&#x27;</span>:
+            para.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.&#x27;</span>;
+            <span class="hljs-keyword">break</span>;
+          <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;overcast&#x27;</span>:
+            para.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;It isn\&#x27;t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.&#x27;</span>;
+            <span class="hljs-keyword">break</span>;
+          <span class="hljs-attr">default</span>:
+            para.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+        }
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h1 id="43-uses-of-js-conditionals">4.3. Uses of JS conditionals</h1>
+<br>
+<p><img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\contional%20diagram%20by%20guru99.com.webp" alt="conditional diagram">
+<br></p>
+<p>Conditionals help us make decisions in our code, whether it’s displaying different graphics in a weather app or handling user interactions in a game.</p>
+<p>JavaScript conditionals play a crucial role in various real-life scenarios. Let's explore some real-life examples:</p>
+<ol>
+<li>
+<p><strong>User Authentication</strong>:</p>
+<ul>
+<li>When a user logs in, conditionals are used to verify their credentials. If the username and password match, they gain access; otherwise, they're denied.</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">if</span> (username === enteredUsername &amp;&amp; password === enteredPassword) {
+  <span class="hljs-comment">// Grant access</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// Show an error message</span>
+}
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>E-commerce Websites</strong>:</p>
+<ul>
+<li>Conditionals determine how products are displayed based on filters (e.g., price range, category, availability).</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">if</span> (selectedCategory === <span class="hljs-string">&quot;Electronics&quot;</span> &amp;&amp; priceRange === <span class="hljs-string">&quot;Under $100&quot;</span>) {
+  <span class="hljs-comment">// Display relevant electronics within the specified price range</span>
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Interactive Forms</strong>:</p>
+<ul>
+<li>When users submit forms, conditionals validate input fields (e.g., email format, required fields).</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">if</span> (emailInput.<span class="hljs-property">value</span>.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;@&quot;</span>) &amp;&amp; passwordInput.<span class="hljs-property">value</span>.<span class="hljs-property">length</span> &gt;= <span class="hljs-number">8</span>) {
+  <span class="hljs-comment">// Proceed with form submission</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// Show error messages</span>
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Game Development</strong>:</p>
+<ul>
+<li>In games, conditionals control player interactions, enemy behavior, and game state transitions.</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">if</span> (playerHealth &lt;= <span class="hljs-number">0</span>) {
+  <span class="hljs-title function_">gameOver</span>();
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// Continue gameplay</span>
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Responsive Web Design</strong>:</p>
+<ul>
+<li>Conditionals adjust layouts based on screen size (e.g., mobile vs. desktop).</li>
+<li>Example (CSS media query):<pre><code class="language-css"><span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">600px</span>) {
+  <span class="hljs-comment">/* Apply mobile-specific styles */</span>
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Dynamic Content Loading</strong>:</p>
+<ul>
+<li>Conditionals fetch data from APIs or databases and display relevant content.</li>
+<li>Example (fetching weather data):<pre><code class="language-javascript"><span class="hljs-keyword">if</span> (isSunny) {
+  <span class="hljs-title function_">displaySunnyWeather</span>();
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-title function_">displayRainyWeather</span>();
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Automated Systems</strong>:</p>
+<ul>
+<li>Conditionals control robotic arms, traffic lights, and smart home devices.</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">if</span> (motionDetected) {
+  <span class="hljs-title function_">turnOnSecurityCamera</span>();
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-title function_">turnOffSecurityCamera</span>();
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<br>
+<p>Conditionals empower developers to create dynamic, responsive, and personalized experiences across various domains.</p>
+<br>
+<p><strong>NOTE</strong>: The logical AND operator <code>&amp;&amp;</code> has been used in several examples above. Let´s see what it is and how it works.</p>
+<h2 id="logical-and-operator">Logical AND operator</h2>
+<p>In JavaScript is used to evaluate multiple conditions within a conditional statement.</p>
+<ol>
+<li>
+<p><strong>Basic Syntax</strong>:</p>
+<ul>
+<li>The <strong><code>&amp;&amp;</code></strong> operator combines two or more conditions.</li>
+<li>It returns <code>true</code> if <strong>all</strong> the conditions are true; otherwise, it returns <code>false</code>.</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">if</span> (condition1 &amp;&amp; condition2) {
+  <span class="hljs-comment">// Code to run if both conditions are true</span>
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Truthy and Falsy Values</strong>:</p>
+<ul>
+<li>JavaScript considers certain values as <strong>truthy</strong> or <strong>falsy</strong>.</li>
+<li>Truthy values: Any value that can be converted to <code>true</code>.</li>
+<li>Falsy values: Any value that can be converted to <code>false</code>.</li>
+<li>Examples of falsy values: <code>false</code>, <code>null</code>, <code>NaN</code>, <code>0</code>, empty string (<code>&quot;&quot;</code>), and <code>undefined</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Short-Circuit Evaluation</strong>:</p>
+<ul>
+<li>The <code>&amp;&amp;</code> operator is a <strong>short-circuit operator</strong>.</li>
+<li>It stops evaluating conditions as soon as it encounters the first <strong>falsy</strong> value.</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">const</span> result = (<span class="hljs-literal">false</span> &amp;&amp; <span class="hljs-title function_">someFunction</span>()); <span class="hljs-comment">// someFunction() is not called</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li>
+<p>Using <code>&amp;&amp;</code> in an <code>if</code> statement:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> x = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">const</span> y = <span class="hljs-number">3</span>;
+
+<span class="hljs-keyword">if</span> (x &gt; <span class="hljs-number">2</span> &amp;&amp; y &lt; <span class="hljs-number">4</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Both conditions are true.&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;At least one condition is false.&quot;</span>);
+}
+</code></pre>
+</li>
+<li>
+<p>Combining multiple conditions:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> age = <span class="hljs-number">18</span>;
+<span class="hljs-keyword">const</span> hasLicense = <span class="hljs-literal">true</span>;
+
+<span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">18</span> &amp;&amp; hasLicense) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You can drive!&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;You cannot drive.&quot;</span>);
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<br>
+<p>You can learn about some other comparison operators <a href="#comparison-operators">up here</a>.</p>
+<br>
+<h1 id="44-references">4.4. References</h1>
+<ul>
+<li>
+<p><a href="https://basque.devcamp.com/pt-full-stack-development-javascript-python-react/guide/basic-syntax-using-conditionals-javascript">DevCamp: Basic Syntax for Using Conditionals in JavaScript</a> and <a href="https://basque.devcamp.com/pt-full-stack-development-javascript-python-react/guide/compound-conditionals-javascript">DevCamp: Compound conditionals</a></p>
+</li>
+<li>
+<p><a href="https://javascript.info/ifelse#the-if-statement">Javascript.Info: Conditional branching: if, '?'</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals">mdn web docs: Making decisions in your code — conditionals</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators">mdn web docs: Expressions and operators</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND">mdn web docs: Logical AND (&amp;&amp;)</a></p>
+</li>
+</ul>
+<br>
+<p><a href="#index"> <span style="color: #blue; font-size: 30px;">↑</span>
+Back to Top</a></p>
+<br>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

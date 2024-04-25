@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>2&period; What are some JS data types&quest;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <div id="index"></div>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+<h1 id="2-what-are-some-js-data-types">2. What are some JS data types?</h1>
+<p>JavaScript is a &quot;<strong>dynamically typed language&quot;</strong>, which means that, unlike some other languages, you <strong>don't need to specify what data type a variable will contain</strong> (numbers, strings, arrays, etc.). A variable can hold a value of any data type and <strong>can be changed to hold a different type at any time</strong>.</p>
+<p>For example, if you declare a variable and give it a value enclosed in quotes, the browser treats the variable as a <strong>string</strong>:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> myString = <span class="hljs-string">&quot;Hello&quot;</span>;
+</code></pre>
+<p><strong>ATTENTION</strong>!!
+Even if the value enclosed in quotes is just digits, it is still a string — not a number — so be careful.</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> myNumber = <span class="hljs-string">&quot;500&quot;</span>; <span class="hljs-comment">// oops, this is still a string</span>
+<span class="hljs-keyword">typeof</span> myNumber;
+
+myNumber = <span class="hljs-number">500</span>; <span class="hljs-comment">// much better — now this is a number</span>
+<span class="hljs-keyword">typeof</span> myNumber;
+</code></pre>
+<p>Try entering the four lines above into your console one by one, and see what the results are.</p>
+<p>You'll notice that we are using a special operator called <code>typeof</code> — this <strong>returns the data type of the variable</strong> you type after it.</p>
+<p>The first time it is called, it should return string, as at that point the myNumber variable contains a string, '500'.</p>
+<p>Have a look and see what it returns the second time you call it.</p>
+<p><img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\screenshot%20dynamic%20typing.png" alt="Console screenshot"></p>
+<br>
+<p><strong>Some Data Type examples:</strong></p>
+<br>
+<pre><code class="language-Javascript"><span class="hljs-comment">// Numbers:</span>
+<span class="hljs-keyword">let</span> length = <span class="hljs-number">16</span>;
+<span class="hljs-keyword">let</span> weight = <span class="hljs-number">7.5</span>;
+
+<span class="hljs-comment">// Strings:</span>
+<span class="hljs-keyword">let</span> color = <span class="hljs-string">&quot;Yellow&quot;</span>;
+<span class="hljs-keyword">let</span> lastName = <span class="hljs-string">&quot;Johnson&quot;</span>;
+
+<span class="hljs-comment">// Booleans</span>
+<span class="hljs-keyword">let</span> x = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">let</span> y = <span class="hljs-literal">false</span>;
+
+<span class="hljs-comment">// Object:</span>
+<span class="hljs-keyword">const</span> person = {<span class="hljs-attr">firstName</span>:<span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-attr">lastName</span>:<span class="hljs-string">&quot;Doe&quot;</span>};
+
+<span class="hljs-comment">// Array object:</span>
+<span class="hljs-keyword">const</span> cars = [<span class="hljs-string">&quot;Saab&quot;</span>, <span class="hljs-string">&quot;Volvo&quot;</span>, <span class="hljs-string">&quot;BMW&quot;</span>];
+
+<span class="hljs-comment">// Date object:</span>
+<span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-string">&quot;2022-03-25&quot;</span>);
+</code></pre>
+<br>
+<p>In JavaScript, we have both:</p>
+<ul>
+<li>
+<p><strong>Primitive</strong> data types: representing simple values like strings, numbers, and booleans.</p>
+</li>
+<li>
+<p><strong>Non-Primitive</strong> data Types: Also known as reference types, these include objects, arrays, and other complex structures that can hold multiple values.</p>
+</li>
+</ul>
+<p>Let´s see in more detail the <strong>data types</strong> available in JavaScript that we can <strong>store in variables</strong>:</p>
+<p><strong>Numbers</strong></p>
+<p>Represents both <strong>integer</strong> and <strong>floating-point numbers.</strong>
+You can store numbers in variables, either whole numbers like 30 (also called integers) or decimal numbers like 2.456 (also called floats or floating point numbers). <strong>You don't need to declare variable types</strong> in JavaScript, unlike some other programming languages. <strong>When you give a variable a number value, you don't include quotes ( &quot; )</strong>:</p>
+<pre><code class="language-JS"><span class="hljs-comment">// Number</span>
+<span class="hljs-keyword">var</span> mynumber = <span class="hljs-number">500</span>;
+<span class="hljs-keyword">let</span> myNumber = <span class="hljs-number">500</span>;
+
+<span class="hljs-keyword">let</span> myAge = <span class="hljs-number">12</span>;
+</code></pre>
+<p><strong>BigInt</strong>
+Introduced in ES2020 to represent integers that are <strong>too large</strong> for the Number type to handle.</p>
+<p><strong>Strings</strong>
+A unique and <strong>immutable</strong> primitive data type introduced in ES6, useful for creating unique object keys.</p>
+<p>Strings are pieces of text. It <strong>can include letters, digits, and symbols</strong> within quotes.</p>
+<p>When you give a variable a string value, you need to <strong>wrap it in single (' ') or double (&quot; &quot;) quote marks</strong>; otherwise, JavaScript tries to interpret it as another variable name.</p>
+<pre><code class="language-Javascript"><span class="hljs-keyword">let</span> greetings = <span class="hljs-string">&quot;Good morning, how are you today?&quot;</span>;
+</code></pre>
+<p><strong>NOTE</strong>: Both double cuotes <code>&quot; &quot;</code> or single cuotes <code>' '</code>  will work the same way.</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;Isabel&quot;</span>;
+<span class="hljs-keyword">var</span> nameTwo = <span class="hljs-string">&#x27;Isabel&#x27;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name); <span class="hljs-comment">// Isabel</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nameTwo); <span class="hljs-comment">// Isabel</span>
+</code></pre>
+<br>
+<p><strong>Booleans</strong> <br></p>
+<p>Booleans are true/false values — they can have two values, <strong>true</strong> or <strong>false.</strong> These are generally used to test a condition, after which, code is run as appropriate. So for example, a simple case would be:</p>
+<pre><code class="language-Javascript"><span class="hljs-keyword">let</span> iAmAlive = <span class="hljs-literal">true</span>;
+</code></pre>
+<p>Whereas in reality it would be used more like this:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> test = <span class="hljs-number">6</span> &lt; <span class="hljs-number">3</span>;
+</code></pre>
+<pre><code class="language-JS"><span class="hljs-comment">// BOOLEAN -&gt; only two options: true or false</span>
+<span class="hljs-keyword">var</span> truthy = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">var</span> notTruthy = <span class="hljs-literal">false</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(truthy); <span class="hljs-comment">// true</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(notTruthy); <span class="hljs-comment">// false</span>
+</code></pre>
+<br>
+<p><strong>Null</strong></p>
+<p>Denotes a <strong>null value</strong>, implying that the variable deliberately <strong>points to no object</strong>. Null means that it is <strong>defined</strong>.
+It does <strong>have access to that variable</strong> but it just is <strong>empty</strong>.
+So <strong>null means empty.</strong> It's the absence of any kind of value.</p>
+<p>For example: You had a registration page and you had some optional fields such as a Twitter user name. If an user decided not to fill that in then, that value for that Twitter user name would just be null. It's our way of understanding that that variable or that value could be there. But in this case, it's just empty.</p>
+<pre><code class="language-JS"><span class="hljs-comment">// NULL -&gt; one possible value = null -&gt; null = empty</span>
+
+<span class="hljs-comment">//var nully = null;</span>
+<span class="hljs-comment">//console.log(nully); //output-&gt; null</span>
+
+age = <span class="hljs-literal">null</span>;
+<span class="hljs-comment">// null</span>
+
+<span class="hljs-keyword">typeof</span> age;
+<span class="hljs-comment">// &quot;object&quot;</span>
+</code></pre>
+<p><strong>Undefined</strong></p>
+<p>Indicates a variable that <strong>has been declared</strong> but has <strong>not yet been assigned a value.</strong> <strong>It has not been defined</strong>.</p>
+<p>It's <strong>not empty.</strong> There literally is <strong>no value</strong> that yet it needs to be assigned later.</p>
+<p>It's what you get when something is simply declared and it's not given a value. It´s <strong>useful for debugging,</strong> to check if something has been defined, but <strong>null is used to say that something is empty</strong>. &lt;----ATTENTION!!</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> notDefined;  <span class="hljs-comment">/* we&#x27;re not going to set it equal to anything. We don´t set it equal to undefined because by default when you simply declare a variable javascript is going to set it equal to undefined. */</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(notDefined); <span class="hljs-comment">// undefined</span>
+
+<span class="hljs-comment">//--------------------another example:---------------------</span>
+
+<span class="hljs-keyword">var</span> age;
+<span class="hljs-comment">// undefined</span>
+
+<span class="hljs-keyword">typeof</span> age;
+<span class="hljs-comment">// &quot;undefined&quot;</span>
+</code></pre>
+<br>
+<p><strong>Symbol</strong></p>
+<p>New in ECMA 6. It is used to work with objects.
+They're kind of similar to strings except they <strong>can not be changed</strong>. There <strong>can only be one of them</strong>. And so they're the closest thing that Javascript has to what's called an immutable type object. So when you create it then it is what it is you <strong>cannot change that value</strong>.</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> mySym = <span class="hljs-title class_">Symbol</span>(<span class="hljs-string">&quot;foo&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(mySym); <span class="hljs-comment">// Symbol(foo)</span>
+</code></pre>
+<br>
+<p><strong>Objects</strong></p>
+<p>In programming, an object is a structure of code that models a real-life object.</p>
+<p>You can have a simple object that represents a box and contains information about its width, length, and height, or you could have an object that represents a person, and contains data about their name, height, weight, what language they speak, how to say hello to them, and more.</p>
+<p>Objects <strong>are variables</strong> too. But objects <strong>can contain many values.</strong></p>
+<p><img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\JS%20objects.png" alt="alt">
+Source: W3school
+<br></p>
+<p>This code assigns many values (Fiat, 500, white) to a variable named car:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">const</span> car = {<span class="hljs-attr">type</span>:<span class="hljs-string">&quot;Fiat&quot;</span>, <span class="hljs-attr">model</span>:<span class="hljs-string">&quot;500&quot;</span>, <span class="hljs-attr">color</span>:<span class="hljs-string">&quot;white&quot;</span>};
+</code></pre>
+<p>Used for storing collections of data and more complex entities. Objects <strong>can contain properties and methods.</strong></p>
+<p><strong>Syntax</strong>:</p>
+<p>In JavaScript objects, we use <strong>curly braces</strong>, the values are written as <strong><code>name:value</code></strong> pairs (name and value separated by a colon <strong><code>,</code></strong>) and are called <strong><code>properties</code></strong>.</p>
+<p><strong>NOTE</strong>: In JavaScript, the use of semicolons <strong><code>;</code></strong> at the end of statements is <strong>optional</strong>, but it is considered a good practice to include them.</p>
+<pre><code class="language-Js"><span class="hljs-keyword">let</span> dog = { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Spot&quot;</span>, <span class="hljs-attr">breed</span>: <span class="hljs-string">&quot;Dalmatian&quot;</span> };
+
+<span class="hljs-comment">// To retrieve the information stored in the object, you can use the following syntax:</span>
+
+dog.<span class="hljs-property">name</span>;  <span class="hljs-comment">// output: &quot;Spot&quot;</span>
+</code></pre>
+<br>
+We can define an object, parse values from an object,  work with nested objects, and add new key/value pairs on the fly.
+<p>In summary it gives you an ability to query data and to set data and also to create a blueprint for your object.
+<br></p>
+<p><strong>Query data:</strong></p>
+<pre><code class="language-Js"><span class="hljs-keyword">var</span> user = { <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Kristine&#x27;</span> }
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(user);
+</code></pre>
+<pre><code class="language-JS"><span class="hljs-comment">// output [object Object] </span>
+{
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Kristine&quot;</span>
+}
+</code></pre>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> user = { <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Kristine&#x27;</span> }
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(user.<span class="hljs-property">name</span>);  <span class="hljs-comment">//To retrieve the information stored in the object</span>
+<span class="hljs-comment">//output</span>
+<span class="hljs-comment">// &quot;Kristine&quot;</span>
+</code></pre>
+<p>This gives us the ability to call the key inside the object and reference points inside of the object. And we could <strong>change the object value</strong>. For example:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> user = { <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Kristine&#x27;</span> }
+user.<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;Jordan&#x27;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(user.<span class="hljs-property">name</span>);
+<span class="hljs-comment">// output:</span>
+<span class="hljs-comment">// &quot;Jordan&quot;</span>
+</code></pre>
+<p><strong>Spaces and line breaks are not important.</strong> An object definition <strong>can span multiple lines</strong>.</p>
+<p>We can <strong>add</strong> a new key-value pair:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> user = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Kristine&#x27;</span>,
+  <span class="hljs-attr">age</span>: <span class="hljs-number">12</span>,
+  <span class="hljs-attr">city</span>: <span class="hljs-string">&#x27;Scottsdale&#x27;</span>,
+  <span class="hljs-attr">grades</span>: {
+    <span class="hljs-attr">math</span>: <span class="hljs-number">90</span>,
+    <span class="hljs-attr">science</span>: <span class="hljs-number">80</span>,
+    <span class="hljs-attr">languageArts</span>: <span class="hljs-number">100</span>
+  }
+}
+
+user.<span class="hljs-property">age</span> = <span class="hljs-number">13</span>;    <span class="hljs-comment">// change the value</span>
+user.<span class="hljs-property">grades</span>.<span class="hljs-property">coding</span> = <span class="hljs-number">95</span>; <span class="hljs-comment">//to add a new key-value pair inside of grades.</span>
+</code></pre>
+<br>
+<p><strong>Arrays</strong></p>
+<p>An array is a <strong>single object</strong> that contains <strong>multiple values</strong> enclosed in <strong>square brackets</strong> and separated by <strong>commas</strong>.</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> myNameArray = [<span class="hljs-string">&quot;Chris&quot;</span>, <span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;Jim&quot;</span>];
+<span class="hljs-keyword">let</span> myNumberArray = [<span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">40</span>];
+
+<span class="hljs-comment">// Once these arrays are defined, you can access each value by their location within the array</span>
+myNameArray[<span class="hljs-number">0</span>]; <span class="hljs-comment">// should return &#x27;Chris&#x27;</span>
+myNumberArray[<span class="hljs-number">2</span>]; <span class="hljs-comment">// should return 40</span>
+
+</code></pre>
+<p>The square brackets specify an <strong>index value</strong> corresponding to the <strong>position of the value</strong> you want returned.</p>
+<p><strong>NOTE</strong>: Arrays in JavaScript are zero-indexed: the first element is at index 0.
+<br></p>
+<p><strong>How you can check for data types in JavaScript ( typeof function)</strong></p>
+<p>Checking for a component's data type in JavaScript can be very important since the <strong>data type determines the types of functions that can be passed.</strong></p>
+<p>You need to know what types of functions you can call on them.</p>
+<p>If you use the regular javascript console in the browser's developer tools. You can use  the <code>typeof</code> function, you can pass something to it.</p>
+<p>For example: We can pass 12, run it and you can see that it tells us that 12 is a type of number.</p>
+<pre><code class="language-JS"><span class="hljs-keyword">typeof</span> <span class="hljs-number">12</span>;
+<span class="hljs-comment">// &quot;number&quot;</span>
+
+<span class="hljs-keyword">typeof</span> <span class="hljs-string">&#x27;Astros&#x27;</span>;
+<span class="hljs-comment">// &quot;string&quot;</span>
+
+<span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span>;
+<span class="hljs-comment">// &quot;boolean&quot;</span>
+
+<span class="hljs-keyword">typeof</span> { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Kristine&quot;</span> };
+<span class="hljs-comment">// &quot;object&quot;</span>
+
+<span class="hljs-keyword">var</span> age;
+<span class="hljs-comment">// undefined --&gt; no value assigned yet</span>
+
+<span class="hljs-keyword">typeof</span> age;
+<span class="hljs-comment">// &quot;undefined&quot;</span>
+
+
+age = <span class="hljs-literal">null</span>;
+<span class="hljs-comment">// null</span>
+
+<span class="hljs-keyword">typeof</span> age;
+<span class="hljs-comment">// &quot;object&quot; --&gt; empty</span>
+</code></pre>
+<br>
+<p><strong>Type Casting</strong></p>
+<p>How to <strong>convert</strong> data from various data types <strong>into different data types</strong> in JavaScript. You may need to change from one datatype into another one.</p>
+<p>Let’s see some options with the aid of the following <strong>examples</strong>:</p>
+<pre><code class="language-JS"><span class="hljs-string">&quot;100&quot;</span> + <span class="hljs-number">42</span>; <span class="hljs-comment">// &quot;10042&quot;</span>
+<span class="hljs-number">42</span> + <span class="hljs-string">&quot;100&quot;</span>; <span class="hljs-comment">// &quot;42100&quot;</span>
+
+<span class="hljs-comment">/*JS doen´t know if we´re trying to append the number 42 onto the string of 100 or are we trying to perform some type of computation on it. */</span>
+
+<span class="hljs-comment">//But with &quot;-&quot; it´s OK:</span>
+<span class="hljs-string">&quot;100&quot;</span> - <span class="hljs-number">42</span>; <span class="hljs-comment">// 58</span>
+
+<span class="hljs-number">100</span> + <span class="hljs-literal">null</span>; <span class="hljs-comment">// 100   JS was able to see null, and instead of throwing an error it converted null to be zero</span>
+
+
+<span class="hljs-comment">//CONVERT NUMBER INTO STRING:</span>
+
+<span class="hljs-keyword">var</span> ageOne = <span class="hljs-number">12</span>;
+<span class="hljs-comment">//Two ways to do it:</span>
+<span class="hljs-title class_">String</span>(ageOne); <span class="hljs-comment">// &#x27;12&#x27;  change ageOne to a string</span>
+ageOne.<span class="hljs-title function_">toString</span>(); <span class="hljs-comment">// &#x27;12&#x27;</span>
+
+
+
+<span class="hljs-comment">//CONVERT STRINGS INTO NUMBERS-&gt; Several ways:</span>
+
+<span class="hljs-keyword">var</span> ageTwo = <span class="hljs-string">&#x27;33&#x27;</span>;
+<span class="hljs-title class_">Number</span>(ageTwo); <span class="hljs-comment">// 33</span>
+
+
+<span class="hljs-keyword">var</span> ageThree = <span class="hljs-string">&quot;33.5&quot;</span>
+<span class="hljs-built_in">parseInt</span>(ageThree); <span class="hljs-comment">// 33 (integer)</span>
+<span class="hljs-built_in">parseFloat</span>(ageThree); <span class="hljs-comment">// return 33.5 as a float which means a decimal point.</span>
+<span class="hljs-comment">//console.log(Number(ageThree)); // 33.5</span>
+<span class="hljs-comment">//console.log(parseFloat(numberTwo)); // 33.5</span>
+
+<span class="hljs-comment">//Example check with typeof:</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">typeof</span> agethree); <span class="hljs-comment">// string</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(+ agethree); <span class="hljs-comment">// 33.5 -&gt; converts the string into a number</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">typeof</span> + ageThree); <span class="hljs-comment">// number</span>
+
+
+
+<span class="hljs-comment">// it returns the phone number as an integer.</span>
+<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&#x27;5555555555 is my phone number&#x27;</span>); <span class="hljs-comment">// 5555555555</span>
+
+<span class="hljs-comment">//IMPORTANT!! --&gt; We need to have something that can be converted into a number at the beggining of the string</span>
+<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&#x27;foo 5555555555 is my phone number&#x27;</span>); <span class="hljs-comment">// NaN (not a number) -&gt;it can&#x27;t parse this foo into an integer</span>
+
+
+<span class="hljs-comment">//Unary operator</span>
+<span class="hljs-keyword">var</span> ageTwo = <span class="hljs-string">&#x27;33&#x27;</span>;
++ ageTwo; <span class="hljs-comment">// 33</span>
+
+<span class="hljs-keyword">var</span> foo = + ageTwo;
+<span class="hljs-comment">// undefined</span>
+<span class="hljs-comment">// then if we return this, foo is 33</span>
+foo;
+<span class="hljs-comment">// 33</span>
+
+
+<span class="hljs-title class_">Number</span>(<span class="hljs-string">&quot;100&quot;</span>) + <span class="hljs-number">42</span>; <span class="hljs-comment">// 142</span>
+<span class="hljs-comment">//you&#x27;re unsure about both of them, then:</span>
+<span class="hljs-title class_">Number</span>(<span class="hljs-string">&#x27;100&#x27;</span>) + <span class="hljs-title class_">Number</span>(<span class="hljs-number">42</span>);
+<span class="hljs-comment">// 142</span>
+
+</code></pre>
+<br>
+<p>In summary, if you're not sure what kind of data you're going to get but you want to be able to be confident about it.</p>
+<p>You can put a <em>number</em> around it or use one of the other types of systems like the <em>unary operator</em> or <em>parseInt</em> or <em>parseFloat</em> then you can be confident that your computation is going to work.</p>
+<p><strong>How we can convert booleans</strong></p>
+<p>All the computers, every server, every system in the whole world, uses the actual ones and zeros, it uses <strong>binary code.</strong></p>
+<p>We just happen to be writing in languages we can use words and symbols in, but eventually it all has to come down to 1 or 0.</p>
+<pre><code class="language-JS"><span class="hljs-title class_">Number</span>(<span class="hljs-literal">true</span>); <span class="hljs-comment">// 1</span>
+<span class="hljs-title class_">Number</span>(<span class="hljs-literal">false</span>); <span class="hljs-comment">// 0</span>
+
+<span class="hljs-comment">//Same way but in CodePen:</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Number</span>(<span class="hljs-literal">true</span>)); <span class="hljs-comment">// 1</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Number</span>(<span class="hljs-literal">false</span>)); <span class="hljs-comment">// 0</span>
+</code></pre>
+<p>Real example:</p>
+<p>Say that you have a function and it communicates with some other API and that <strong>API doesn't know what</strong> <strong>true or false is they can't interpret that</strong>. <strong>But it can interpret 1 and 0</strong> and that's how it should be represented. You can wrap True or False into it. Return it and everything works. That is how you can use <strong>typecasting</strong> in javascript.</p>
+<br>
+<h1 id="references">References</h1>
+<ul>
+<li>
+<p>In the w3 schools website, you can practice with many interactive examples:
+<a href="https://www.w3schools.com/js/js_datatypes.asp">w3schools: JavaScript Data type Examples</a></p>
+</li>
+<li>
+<p><a href="https://basque.devcamp.com/pt-full-stack-development-javascript-python-react/guide/guide-javascript-objects">DevCamp: Guide to JavaScript Objects</a></p>
+</li>
+<li>
+<p><a href="https://basque.devcamp.com/pt-full-stack-development-javascript-python-react/guide/how-to-perform-type-casting-javascript">DevCamp: How to Perform Type Casting in JavaScript</a></p>
+</li>
+<li>
+<p><a href="https://github.com/rails-camp/javascript-programming/blob/master/section_b_09_data_types.js">This DevCamp´s repository: stores the SOURCE CODE for each lesson of Devcamp's JavaScript Programming Course. DATA TYPES</a></p>
+</li>
+</ul>
+<p><a href="#index"> <span style="color: #blue; font-size: 30px;">↑</span>
+Back to Top</a></p>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+
+            
+            
+        </body>
+        </html>

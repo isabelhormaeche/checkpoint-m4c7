@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>6&period; What is the difference between a function declaration and a function expression&quest;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <div id="index"></div>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+<h1 id="6-what-is-the-difference-between-a-function-declaration-and-a-function-expression">6. What is the difference between a function declaration and a function expression?</h1>
+<h1 id="61-javascript-functions">6.1. JavaScript functions</h1>
+<p>JavaScript functions are reusable blocks of code that perform a specific task, taking some form of input and returning an output.</p>
+<p><strong>Syntax</strong></p>
+<p>To define a function, you must use the function keyword, followed by a name, followed by parentheses ( ). Then you have to write the function logic between curly brackets { }</p>
+<p>Here is an example of how to write a function in JavaScript:</p>
+<pre><code class="language-JS">
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">greetThePlanet</span>(<span class="hljs-params"></span>) {
+       <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello world!&quot;</span>;
+}
+​
+<span class="hljs-title function_">greetThePlanet</span>();
+<span class="hljs-variable constant_">OUTPUT</span>
+<span class="hljs-string">&quot;Hello world!&quot;</span>
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">function</span> <span class="hljs-title function_">addTwoNumbers</span>(<span class="hljs-params">x, y</span>) {
+       <span class="hljs-keyword">return</span> x + y;
+}
+</code></pre>
+<br>
+<p>Let’s look at each part of the above example:</p>
+<ul>
+<li>
+<p><strong>Function</strong> is the keyword required to actually start declaring a function
+“addTwoNumbers” is the function’s name, which is customizable. Function names can contain letters, numbers, and certain special characters, just like variables.</p>
+</li>
+<li>
+<p>(x, y) are <strong>parameters</strong>, which are variable names for the inputs the function will accept. These parameters are also referred to as arguments.</p>
+</li>
+<li>
+<p><strong>Return</strong> is the keyword that exits the function and shares an optional value outside.</p>
+</li>
+<li>
+<p>The code that the function will execute must be put inside of curly brackets <strong>{ }</strong></p>
+</li>
+<li>
+<p>Once a JS function is <strong>defined (declared)</strong>, you can use it by referencing its name with parentheses ( ) right after. Note that a function doesn’t have to have parameters - they can simply be left blank in the parentheses.</p>
+</li>
+</ul>
+<p>There can be zero, one, or multiple arguments in a function. In thefirst  example above, the function &quot;greetThePlanet&quot; simply returns the phrase &quot;Hello World!&quot;, and it doesn't require any parameters (arguments) in order to do so.</p>
+<p>However, <strong>if a function does have parameters, you’ll need to provide values inside the parentheses when using the function</strong>. Otherwise, your code won’t work and you’ll get an error message.</p>
+<p>Example:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">function</span> <span class="hljs-title function_">square</span>(<span class="hljs-params">number</span>) {
+       <span class="hljs-keyword">return</span> number * number;
+}
+​
+<span class="hljs-title function_">square</span>(<span class="hljs-number">16</span>);
+<span class="hljs-variable constant_">OUTPUT</span>
+<span class="hljs-number">256</span>
+</code></pre>
+<br>
+<p>If your function takes <strong>more than one argument</strong>, simply <strong>separate</strong> them with a <strong>comma</strong> inside of the parentheses.</p>
+<p>Example:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">function</span> <span class="hljs-title function_">addTwoNumbers</span>(<span class="hljs-params">x, y</span>) {
+       <span class="hljs-keyword">return</span> x + y;
+}
+</code></pre>
+<p><strong>Why Use JS Functions?</strong></p>
+<p>Functions are great for efficiency - you can define it one time and then use it multiple times, as needed. You <strong>don't have to rewrite the same or similar code over and over again</strong>. JavaScript functions also allow you to plug in different inputs, or arguments, to get different results, based on the information you are working with. Using JavaScript functions <strong>saves a lot of time and makes your code less cumbersome</strong>.</p>
+<br>
+<h1 id="62-function-expression-vs-function-declaration">6.2. Function Expression vs Function Declaration</h1>
+<p>We must remember that functions are values. They can be assigned, copied or declared in any place of the code.</p>
+<p>The main differences between <strong>function declarations</strong> and <strong>function expressions</strong> in JavaScript:</p>
+<ol>
+<li>
+<p><strong>Function Declaration</strong>:</p>
+<ul>
+<li>
+<p>A function declaration is created using the <code>function</code> keyword.</p>
+</li>
+<li>
+<p>It <strong>must have a function name</strong>.</p>
+</li>
+<li>
+<p>These declarations are <strong>hoisted</strong>, meaning they are loaded/processed before any other code execution.</p>
+</li>
+<li>
+<p>The function is declared as a separate statement in the main code flow.</p>
+</li>
+<li>
+<p>They can be accessed both <strong>before and after</strong> the function definition.</p>
+</li>
+<li>
+<p>Examples:</p>
+<pre><code class="language-JS"><span class="hljs-comment">// Function Declaration</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">sampleDeclaration</span>(<span class="hljs-params">paramA, paramB</span>) {
+    <span class="hljs-keyword">return</span> paramA + paramB;
+}
+<span class="hljs-keyword">let</span> result = <span class="hljs-title function_">sampleDeclaration</span>(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Sum=&#x27;</span>, result); <span class="hljs-comment">// Output: Sum= 10</span>
+</code></pre>
+<pre><code class="language-JS"><span class="hljs-comment">// another function declaration</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHi</span>(<span class="hljs-params"></span>) {
+<span class="hljs-title function_">alert</span>( <span class="hljs-string">&quot;Hello&quot;</span> );
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Function Expression</strong>:
+It allows us to create a new function in the middle of any expression.</p>
+<ul>
+<li>
+<p>Similar to a function declaration but <strong>without a function name</strong>.</p>
+</li>
+<li>
+<p>It can be stored in a variable assignment.</p>
+</li>
+<li>
+<p>Function expressions <strong>loaded and executed only when the interpreter reaches that line of code</strong>. They are created dynamicallywhen the execution flow reaches them.</p>
+</li>
+<li>
+<p>The function can be accessed <strong>only after</strong> the function definition.</p>
+</li>
+<li>
+<p>Example:</p>
+<pre><code class="language-JS"><span class="hljs-comment">// Function Expression</span>
+<span class="hljs-keyword">let</span> sampleExpression = <span class="hljs-keyword">function</span> (<span class="hljs-params">paramA, paramB</span>) {
+    <span class="hljs-keyword">return</span> paramA + paramB;
+};
+<span class="hljs-keyword">let</span> result = <span class="hljs-title function_">sampleExpression</span>(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Sum: &#x27;</span>, result); <span class="hljs-comment">// Output: Sum: 10</span>
+</code></pre>
+<pre><code class="language-JS"> <span class="hljs-comment">// Another example of Function Expression</span>
+ <span class="hljs-keyword">let</span> sayHi = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-title function_">alert</span>( <span class="hljs-string">&quot;Hello&quot;</span> );
+ };
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<p>In most cases when we need to declare a function, a Function Declaration is preferable, because it is visible prior to the declaration itself. That gives us more flexibility in code organization, and is usually more readable.</p>
+<p>So we should use a Function Expression only when a Function Declaration is not fit for the task.</p>
+<h1 id="references">References</h1>
+<ul>
+<li>
+<p><a href="https://www.geeksforgeeks.org/difference-between-function-declaration-and-function-expression-in-javascript/.">Difference between ‘function declaration’ and ‘function expression'</a></p>
+</li>
+<li>
+<p><a href="https://www.freecodecamp.org/news/when-to-use-a-function-declarations-vs-a-function-expression-70f15152a0a0/">When to use a function declaration vs. a function expression</a></p>
+</li>
+<li>
+<p><a href="https://javascript.info/function-expressions">Function expressions</a></p>
+</li>
+<li>
+<p><a href="https://www.javascript.com/learn/functions">JavaScript.com</a></p>
+</li>
+</ul>
+<br>
+<p><a href="#index"> <span style="color: #blue; font-size: 30px;">↑</span>
+Back to Top</a>
+<br></p>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+
+            
+            
+        </body>
+        </html>

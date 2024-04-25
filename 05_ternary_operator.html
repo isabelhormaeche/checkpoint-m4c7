@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>What is a Ternary Operator&quest;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <div id="index"></div>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+<h1 id="what-is-a-ternary-operator">What is a Ternary Operator?</h1>
+<p>It´s is one of the multiple different types of <a href="04_conditionals.html">conditionals</a> in JavaScript.</p>
+<p>Sometimes, we need to assign a variable depending on a condition.</p>
+<p>For instance:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> accessAllowed;
+<span class="hljs-keyword">let</span> age = <span class="hljs-title function_">prompt</span>(<span class="hljs-string">&#x27;How old are you?&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);
+
+<span class="hljs-keyword">if</span> (age &gt; <span class="hljs-number">18</span>) {
+  accessAllowed = <span class="hljs-literal">true</span>;
+} <span class="hljs-keyword">else</span> {
+  accessAllowed = <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-title function_">alert</span>(accessAllowed);
+</code></pre>
+<p>The ternary operator <strong>lets us do that in a shorter and simpler way.</strong> It´s a &quot;shortcut&quot; way to write an <em>if else</em> conditional.</p>
+<p>The operator is represented by a question mark <strong>(?).</strong> Sometimes it’s called <strong>“ternary”</strong>, because the operator has three operands:</p>
+<ul>
+<li>a <strong>condition</strong>,</li>
+<li>a <strong>value1</strong> to be returned if the condition is <strong>true</strong>,</li>
+<li>and a <strong>value2</strong> to be returned if the condition is <strong>false</strong>.</li>
+</ul>
+<p>It evaluates the condition and returns one of the two specified values based on whether the condition is true or false.</p>
+<p>Its syntax is quite simple and <strong>allows you to write a conditional block on a single line</strong>.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> result = condition ? value1 : value2;
+</code></pre>
+<p>The condition is evaluated: if it is truthy then value1 is returned, otherwise – value2.</p>
+<p><strong>For example:</strong></p>
+<pre><code class="language-Js"><span class="hljs-keyword">let</span> accessAllowed = (age &gt; <span class="hljs-number">18</span>) ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;
+</code></pre>
+<p>Note: Technically, we can omit the parentheses around age &gt; 18. The question mark operator has a low precedence, so it executes after the comparison &gt;.</p>
+<p><img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\ternary%20operator%20by%20DevCamp.png" alt="Ternary operator by DevCamp">
+Ternary operator by DevCamp.</p>
+<p>Another example:</p>
+<pre><code class="language-Js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">ageVerification</span>(<span class="hljs-params">age</span>) {
+  <span class="hljs-comment">// if (age &gt; 25) {</span>
+  <span class="hljs-comment">//   console.log(&#x27;can rent a car&#x27;);</span>
+  <span class="hljs-comment">// } else {</span>
+  <span class="hljs-comment">//   console.log(&quot;can&#x27;t rent a car&quot;);</span>
+  <span class="hljs-comment">// }</span>
+
+  <span class="hljs-keyword">return</span> age &gt; <span class="hljs-number">25</span> ? <span class="hljs-string">&quot;can rent a car&quot;</span> : <span class="hljs-string">&quot;can&#x27;t rent a car&quot;</span>;
+}
+
+<span class="hljs-title function_">ageVerification</span>(<span class="hljs-number">30</span>); <span class="hljs-comment">//can rent a car</span>
+<span class="hljs-title function_">ageVerification</span>(<span class="hljs-number">10</span>); <span class="hljs-comment">//can´t rent a car</span>
+</code></pre>
+<p>One more example:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> result;
+
+<span class="hljs-keyword">if</span> (a + b &lt; <span class="hljs-number">4</span>) {
+  result = <span class="hljs-string">&#x27;Below&#x27;</span>;
+} <span class="hljs-keyword">else</span> {
+  result = <span class="hljs-string">&#x27;Over&#x27;</span>;
+}
+</code></pre>
+<p>Now using the conditional operator '?':</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> result = (a + b &lt; <span class="hljs-number">4</span>) ? <span class="hljs-string">&#x27;Below&#x27;</span> : <span class="hljs-string">&#x27;Over&#x27;</span>;
+</code></pre>
+<p>(The <strong>if</strong> is replaced by the question mark <strong>(?)</strong> and The <strong>else</strong> is replaced by the colon <strong>(:)</strong>
+)</p>
+<br>
+<p><strong>Multiple (?) ternary operators</strong></p>
+<p><img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\screenshot%20DevCamp%20example%20of%20Ternary%20operator.png" alt="Screenshot DevCamp example of MULTIPLE Ternary Operator">
+<a href="https://basque.devcamp.com/pt-full-stack-development-javascript-python-react/guide/overview-javascript-ternary-operator">Screenshot from DevCamp´s example of MULTIPLE Ternary Operator</a></p>
+<br>
+<p>A sequence of question mark operators (?) can return a value that depends on <strong>more than one condition</strong>.</p>
+<p>For instance, here we have <strong>3 expressions or values</strong>:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">let</span> age = <span class="hljs-title function_">prompt</span>(<span class="hljs-string">&#x27;age?&#x27;</span>, <span class="hljs-number">18</span>);
+
+<span class="hljs-keyword">let</span> message = (age &lt; <span class="hljs-number">3</span>) ? <span class="hljs-string">&#x27;Hi, baby!&#x27;</span> :
+  (age &lt; <span class="hljs-number">18</span>) ? <span class="hljs-string">&#x27;Hello!&#x27;</span> :
+  (age &lt; <span class="hljs-number">100</span>) ? <span class="hljs-string">&#x27;Greetings!&#x27;</span> :
+  <span class="hljs-string">&#x27;What an unusual age!&#x27;</span>;
+
+<span class="hljs-title function_">alert</span>( message );
+</code></pre>
+<p>Here is how this looks using <strong>if..else</strong> instead:</p>
+<pre><code class="language-Js"><span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">3</span>) {
+  message = <span class="hljs-string">&#x27;Hi, baby!&#x27;</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">18</span>) {
+  message = <span class="hljs-string">&#x27;Hello!&#x27;</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">100</span>) {
+  message = <span class="hljs-string">&#x27;Greetings!&#x27;</span>;
+} <span class="hljs-keyword">else</span> {
+  message = <span class="hljs-string">&#x27;What an unusual age!&#x27;</span>;
+}
+</code></pre>
+<p>Let´s explain the above example:</p>
+<ul>
+<li>The first question mark (?) checks whether age &lt; 3.</li>
+<li>If true – it returns 'Hi, baby!'. Otherwise, it continues to the expression after the colon <strong>“:”</strong>, checking age &lt; 18.</li>
+<li>If that’s true – it returns 'Hello!'. Otherwise, it continues to the expression after the next colon <strong>“:”</strong>, checking age &lt; 100.</li>
+<li>If that’s true – it returns 'Greetings!'. Otherwise, it continues to the expression after the last colon <strong>“:”</strong>, returning 'What an unusual age!'.</li>
+</ul>
+<p>In summary, the <strong>ternary operator</strong> is a <strong>conditional operator</strong> that takes three operands: a <strong>condition</strong>, a value to be returned if the condition is <strong>true</strong>, and a value to be returned if the condition is <strong>false</strong>. It evaluates the condition and returns one of the two specified values based on whether the condition is true or false.</p>
+<p>The ternary operator allows for concise decision-making in code.</p>
+<br>
+<h1 id="references">References</h1>
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">mdn web docs:Conditional (ternary) operator</a></p>
+</li>
+<li>
+<p><a href="https://www.geeksforgeeks.org/ternary-operator-in-programming/">Ternary Operator in Programming - GeeksforGeeks</a></p>
+</li>
+<li>
+<p><a href="https://www.deleonnet.com/blog/javascript/if-else">https://www.deleonnet.com/blog/javascript/if-else</a></p>
+</li>
+<li>
+<p><a href="https://basque.devcamp.com/pt-full-stack-development-javascript-python-react/guide/overview-javascript-ternary-operator">DevCamp: Ternary operator</a></p>
+</li>
+<li>
+<p><a href="https://javascript.info/ifelse#the-if-statement">Javascript.Info: Conditional branching: if, '?'</a></p>
+</li>
+</ul>
+<br>
+<p><a href="#index"> <span style="color: #blue; font-size: 30px;">↑</span>
+Back to Top</a>
+<br></p>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+
+            
+            
+        </body>
+        </html>

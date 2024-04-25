@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>1&period; What makes Javascript different from any other programming language&quest;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <div id="index"></div>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+<h1 id="1-what-makes-javascript-different-from-any-other-programming-language">1. What makes Javascript different from any other programming language?</h1>
+<p>Table of contents:</p>
+<ul>
+<li><a href="#1-what-makes-javascript-different-from-any-other-programming-language">1. What makes Javascript different from any other programming language?</a></li>
+<li><a href="#11-what-is-javascript">1.1. What is JavaScript?</a></li>
+<li><a href="#12-javascript-differs-from-other-programming-languages-in-several-ways">1.2. JavaScript differs from other programming languages in several ways</a></li>
+<li><a href="#13-javascript-compared-with-python">1.3. JavaScript compared with Python</a></li>
+<li><a href="#14-how-to-add-javascript-in-html-document">1.4. How to Add JavaScript in HTML Document?</a></li>
+<li><a href="#15-syntax">1.5. Syntax</a></li>
+<li><a href="#16-why-to-use-js">1.6. Why to use JS</a></li>
+<li><a href="#17-uses-of-javascript">1.7. Uses of JavaScript</a></li>
+<li><a href="#18-references">1.8. References</a></li>
+</ul>
+<br>
+<figure>
+    <img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\JavaScript_mascot_bliss.png" 
+         alt="Image caption">
+    <figcaption>By Mickwellington, via Wikimedia Commons</figcaption>
+</figure>
+<br>
+<h1 id="11-what-is-javascript">1.1. What is JavaScript?</h1>
+<p>JavaScript is:</p>
+<ul>
+<li>a multi-paradigm, <strong>dynamic language</strong> with types and operators, standard built-in objects, and methods.</li>
+<li>Its <strong>syntax</strong> is based on the Java and C languages — many structures from those languages apply to JavaScript as well.</li>
+<li>JavaScript supports <strong>object-oriented programming</strong> with object prototypes and classes.</li>
+<li>It also supports <strong>functional programming</strong> since functions are first-class objects that can be easily created via expressions and passed around like any other object.</li>
+</ul>
+<p>JavaScript, often abbreviated as <strong>JS</strong>, is a high-level, interpreted scripting language that is widely used in web development. It can be <strong>embedded in HTML and is executed in a user’s web browser</strong>. JavaScript is designed to <strong>add interactivity and dynamic behavior</strong> (e.g., having complex animations, clickable buttons, popup menus, etc.) <strong>to static web pages</strong>, allowing developers to create complex, <strong>interactive web applications</strong>. Making them more engaging and user-friendly.</p>
+<p>Initially designed to create interactive web pages, has since evolved from a simple <strong>client-side</strong> scripting language to a versatile language that now also supports <strong>server-side</strong> programming.</p>
+<p>There are some more advanced <strong>server side versions</strong> of JavaScript such as <strong>Node.js</strong>, which allow you to add more functionality to a website than downloading files (such as realtime collaboration between multiple computers). Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its environment to provide <strong>programmatic control</strong> over them.</p>
+<p>Node.js provides a set of features that allow developers to create high-performance, scalable server applications. This includes the ability to handle HTTP requests, access the file system, communicate with databases, and more. While JavaScript runs in the browser, <strong>Node.js extends the capabilities of JavaScript to the server,</strong> opening the door for full-stack development using a single language.</p>
+<!-- https://zerotomastery.io/blog/frontend-javascript-interview-questions/ -->
+<p>JavaScript has some <strong>special features</strong> that make it powerful:</p>
+<ul>
+<li>
+<p>It can <strong>‘handle events</strong>’, which means it can respond to things like mouse clicks and keystrokes.</p>
+</li>
+<li>
+<p>It can <strong>create objects</strong>, which are like containers that can hold data and perform actions.</p>
+</li>
+<li>
+<p>JavaScript is also <strong>flexible</strong> in how it handles data. Unlike some other programming languages, you don't need to specify what kind of data a variable will hold. For example, you could create a variable called &quot;x&quot; and set it equal to a number, a string of text, or even an entire object.</p>
+</li>
+</ul>
+<br>
+<br>
+<h1 id="12-javascript-differs-from-other-programming-languages-in-several-ways">1.2. JavaScript differs from other programming languages in several ways</h1>
+<br>
+<p><img src="file:////images/screenshot%20table.png" alt="Screenshot Table comparison Py vs JS"></p>
+<br>
+<ul>
+<li>
+<p><strong>Compiled vs Interpreted</strong>
+One of the major differences between JavaScript and other programming languages is how they are executed. Most programming languages are compiled (like Java), meaning that the code must be compiled into machine code before it can be run. In contrast, JavaScript is an <strong>interpreted language</strong>, meaning that it does not need to be compiled before it can be run. This feature makes JavaScript easier to work with, as developers don't have to wait for their code to compile before they can test it.</p>
+</li>
+<li>
+<p><strong>Client-Side vs Server-Side</strong>
+Another key difference between JavaScript and other programming languages is where they are run. JavaScript is a client-side scripting language, meaning that code written in JavaScript will be <strong>executed on the user's computer</strong> rather than on the server, providing a more interactive user experience. In contrast, server-side languages must be sent from the server to the user's computer before they can be executed.</p>
+</li>
+<li>
+<p><strong>Object-Oriented vs Procedural</strong>
+JavaScript is an object-oriented programming language, meaning that code written in JavaScript is made up of <strong>objects that contain data and functions</strong>. These objects can be manipulated and used to create complex programs. On the other hand, many other programming languages are procedural, meaning that code written in these languages consists of a series of instructions that must be followed in order.</p>
+</li>
+<li>
+<p><strong>Dynamic vs Static Typing</strong>
+Another key difference between JavaScript and other programming languages is how they handle data types. JavaScript is a <a href="02_datatypes1.html">dynamic language</a>, meaning that variables do not have to be declared with a specific type, making it easier to work with data (similar to Ruby and Python). On the other hand, statically typed languages (like Java or C or C++) require that variables be declared with a specific type before they can be used.</p>
+<p>For example:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> age = <span class="hljs-number">12</span>; 
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(age);
+</code></pre>
+<p>In the other statically type language woul be similar to this:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> age : <span class="hljs-title class_">Number</span> = <span class="hljs-number">12</span>; <span class="hljs-comment">//declared with a specific type: Number</span>
+</code></pre>
+<p>Javascript has some kind of side languages or some precompiler such as <strong>typescript</strong> that are very similar to JS but they force you to put in the data types that are actually the reason why typescript is called typescript.</p>
+</li>
+</ul>
+<br>
+<br>
+<h1 id="13-javascript-compared-with-python">1.3. JavaScript compared with Python</h1>
+<p>JavaScript was originally designed to support HTML pages in the browser. Python was made to run from the command line to support servers (and desktops).</p>
+<p>Both languages are now supporting larger communities. Python is popular as a data processing language in the social sciences. JavaScript is found now on servers and other locations.</p>
+<br>
+<p><img src="file:////images/screenshot%20JS%20vs%20Python%20differences.png" alt="Screenshot Table comparison Py vs JS"></p>
+<br>
+<p>JavaScript uses <strong>curly brackets</strong> to designate blocks of code. Python uses indentation and whitespace.</p>
+<p>Python offers flexible parameter blocks for methods, while JavaScript insists that all <strong>parameters must be specified</strong>.</p>
+<p>JavaScript code is often <strong>driven by events</strong> such as <strong>mouse clicks or keystrokes.</strong> Python responds to function calls.</p>
+<p>Many Python libraries are focused on data processing and analysis, while many JavaScript libraries are designed to <strong>manipulate HTML</strong> in the browser.</p>
+<br>
+<p><strong>Do you want to see what can JavaScript do?</strong></p>
+<p>JavaScript can for example change HTML attribute values. In this case JS changes the value of the src (source) attribute of an image.</p>
+<pre><code class="language-HTML"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>What Can JavaScript Do?<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>JavaScript can change HTML attribute values.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>In this case JavaScript changes the value of the src (source) attribute of an image.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;document.getElementById(&#x27;myImage&#x27;).src=&#x27;pic_bulbon.gif&#x27;&quot;</span>&gt;</span>Turn on the light<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;myImage&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;pic_bulboff.gif&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width:100px&quot;</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;document.getElementById(&#x27;myImage&#x27;).src=&#x27;pic_bulboff.gif&#x27;&quot;</span>&gt;</span>Turn off the light<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>Try this example yourself <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb">here in the W3 School interactive web.</a>
+<figure>
+<img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\screenshot bulbon.png" 
+             alt="Image caption">
+<figcaption>By W3 Schools </figcaption>
+</figure></p>
+<br>
+<h1 id="14-how-to-add-javascript-in-html-document">1.4. How to Add JavaScript in HTML Document?</h1>
+<p>JavasScript code is inserted between <script> and </script> tags when used in an HTML document.</p>
+<p>Scripts can be placed inside the <strong>body</strong> or the <strong>head</strong> section of an HTML page or inside both the head and body.</p>
+<p>We can also place JavaScript <strong>outside</strong> the HTML file which can be linked by specifying its source in the script tag.</p>
+<ul>
+<li>
+<p>JavaScript inside <strong><code>&lt;head&gt;</code></strong> Tag.</p>
+<ul>
+<li>JavaScript code is placed inside the <code>&lt;head&gt;</code> section of an HTML page and uses the <strong><code>&lt;script&gt;</code></strong> element. This ensures the script is <strong>loaded and executed when the page loads.</strong></li>
+<li>Example:  This example shows the addition of a script file inside the head section<pre><code class="language-HTML"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>
+        Add JavaScript Code inside Head Section
+    <span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Adding script file inside the head section. --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-keyword">function</span> <span class="hljs-title function_">myFun</span>(<span class="hljs-params"></span>) {
+            <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;demo&quot;</span>)
+                .<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;Content changed!&quot;</span>;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
+        Add JavaScript Code
+        inside Head Section
+    <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color:green;&quot;</span>&gt;</span>
+        GeeksforGeeks
+    <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;myFun()&quot;</span>&gt;</span>
+        Click Here
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>JavaScript inside <strong><code>&lt;body&gt;</code></strong> Tag.</p>
+<ul>
+<li>
+<p>JavaScript Code is placed inside the <code>&lt;body&gt;</code> section of an HTML page and  we also use <code>&lt;script&gt; &lt;/script&gt;</code> tag <strong>inside and above the closing tag of <code>&lt;/body&gt;</code>.</strong></p>
+</li>
+<li>
+<p>Example:  This example shows the addition of a script file inside the body section</p>
+<pre><code class="language-HTML"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>
+        Add JavaScript Code inside Body Section
+    <span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
+        Add JavaScript Code
+        inside Body Section
+    <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color:green;&quot;</span>&gt;</span>
+        GeeksforGeeks
+    <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;myFun()&quot;</span>&gt;</span>
+        Click Here
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Adding script file inside the body section. --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-keyword">function</span> <span class="hljs-title function_">myFun</span>(<span class="hljs-params"></span>) {
+            <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;demo&quot;</span>)
+                .<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;Content changed!&quot;</span>;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>You can try yourself these examples on this web: <a href="https://www.geeksforgeeks.org/where-to-put-javascript-in-an-html-document/">geeksforgeeks.or.</a></p>
+<ul>
+<li>
+<p><strong>External JavaScript</strong></p>
+<ul>
+<li>JavaScript can also be used in external <strong>file</strong>, <strong>folder</strong> or <strong>url</strong>.</li>
+<li>The file extension of the JavaScript file will be <strong><code>.js</code></strong>.</li>
+<li>To use an external script put the name of the script file/folder/url in the <strong><code>src</code></strong> attribute of a <code>&lt;script&gt;</code> tag. External scripts cannot contain script tags.</li>
+<li>Example: This example shows the <strong>linking of an external script file</strong> inside the head section. And in the <em>comments</em> you can see the folder and url examples.</li>
+</ul>
+<pre><code class="language-HTML"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Demo External JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span>A Paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;myFunction()&quot;</span>&gt;</span>Try it<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This example links to &quot;myScript.js&quot;.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>(myFunction is stored in &quot;myScript.js&quot;)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;myScript.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>       <span class="hljs-comment">&lt;!-- Adding link of an external script FILE inside the head section. --&gt;</span>
+
+
+<span class="hljs-comment">&lt;!-- Other external options: --&gt;</span>
+  
+<span class="hljs-comment">&lt;!-- &lt;script src=&quot;/js/myScript.js&quot;&gt;&lt;/script&gt; --&gt;</span>     <span class="hljs-comment">&lt;!-- Adding link of an external script FOLDER inside --&gt;</span>
+
+
+<span class="hljs-comment">&lt;!-- &lt;script src=&quot;https://www.example.com/my-script.js&quot;&gt;&lt;/script&gt; --&gt;</span>  <span class="hljs-comment">&lt;!-- Load an external URL JavaScript file --&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+<p>Try the above example yourself <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_whereto_external">here</a></p>
+<p>In general, <strong>inline</strong> scripts ( scripts reside within the same HTML file) are convenient for small examples or dynamic rendering, while <strong>external</strong> scripts (reside in separate files (e.g., .js files)) offer better maintainability and performance in larger projects.</p>
+<br>
+<h1 id="15-syntax">1.5. Syntax</h1>
+<p>JavaScript syntax is the set of rules, how JavaScript programs are constructed:</p>
+<p>Some key aspects are :</p>
+<ul>
+<li>
+<p><strong>Basic Print method in JavaScript</strong>:</p>
+<ul>
+<li>
+<p>Example:</p>
+<pre><code class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Basic Print method in JavaScript&quot;</span>);
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Variables</strong>:</p>
+<ul>
+<li>
+<p>Variables are <strong>containers</strong> for storing values.</p>
+</li>
+<li>
+<p>To create or <strong>declare</strong> variables, you can use the <strong>keywords</strong> <code>var</code>, <code>let</code>, or <code>const</code>.</p>
+</li>
+<li>
+<p>They are automatically declared when first used.</p>
+</li>
+<li>
+<p>Example: <strong>y</strong> is defined as a variable. Then, <strong>y</strong> is assigned (given) the value 6 and end with a semi-colon <code>; </code>:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// How to create/declare variables:</span>
+ <span class="hljs-keyword">var</span> x;
+ <span class="hljs-keyword">let</span> y;
+<span class="hljs-comment">// How to use variables/ Assign value to the variable:</span>
+ x = <span class="hljs-number">5</span>;
+ y = <span class="hljs-number">6</span>;
+ <span class="hljs-comment">// How to use variables:</span>
+ <span class="hljs-keyword">let</span> z = x + y;
+</code></pre>
+</li>
+<li>
+<p><strong>When to Use</strong> <em>var</em>, <em>let</em>, or <em>const</em>?</p>
+<ol>
+<li>
+<p>Always declare variables. It is considered good programming practice to always <strong>declare variables before use</strong>.</p>
+</li>
+<li>
+<p>Always use <strong>const</strong> if the <em>value</em> should <strong>not be changed</strong></p>
+</li>
+<li>
+<p>Always use <strong>const</strong> if the <em>type</em> should not be changed (Arrays and Objects)</p>
+</li>
+<li>
+<p><code>let</code> variables cannot be re-defined. Only use <strong>let</strong> if you can't use const. For more information about how to use <strong>let</strong> check this link <a href="https://www.w3schools.com/js/js_let.asp">Let</a>.</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>Variables declared with let have Block Scope</p>
+</li>
+<li>
+<p>Variables declared with let must be Declared before use</p>
+</li>
+<li>
+<p>Variables declared with let cannot be Redeclared in the same scope.</p>
+</li>
+</ul>
+<pre><code class="language-JS">
+  <span class="hljs-keyword">let</span> age = <span class="hljs-number">12</span>;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(age);
+
+  <span class="hljs-keyword">let</span> age = <span class="hljs-number">15</span>; <span class="hljs-comment">// nope!</span>
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(age);
+</code></pre>
+<ol start="5">
+<li><code>Var</code> variables can be re-defined. Only use <strong>var</strong> if you MUST support old browsers.</li>
+</ol>
+<pre><code class="language-JS">
+  <span class="hljs-keyword">var</span> age = <span class="hljs-number">12</span>;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(age);
+
+  <span class="hljs-keyword">var</span> age = <span class="hljs-number">15</span>; <span class="hljs-comment">// yep!</span>
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(age);
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Types of variables</strong>:</p>
+<ul>
+<li><strong>Gobal</strong>: Declare a variable outside function or with a window object.  (<code>let Name = &quot;Apple&quot;;</code> )</li>
+<li><strong>Local</strong>: Declare a variable inside of a block or function. (<code>let num = 45;</code>)</li>
+<li>Example:<pre><code class="language-javascript">    <span class="hljs-comment">// Declare a variable and initialize it</span>
+ <span class="hljs-comment">// Global variable declaration</span>
+ <span class="hljs-keyword">let</span> <span class="hljs-title class_">Name</span> = <span class="hljs-string">&quot;Apple&quot;</span>;
+
+ <span class="hljs-comment">// Function definition</span>
+ <span class="hljs-keyword">function</span> <span class="hljs-title function_">MyFunction</span>(<span class="hljs-params"></span>) {
+
+     <span class="hljs-comment">// Local variable declaration</span>
+     <span class="hljs-keyword">let</span> num = <span class="hljs-number">45</span>;
+
+     <span class="hljs-comment">// Display the value of Global variable</span>
+     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Name</span>);
+
+     <span class="hljs-comment">// Display the value of local variable</span>
+     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(num);
+ }
+
+ <span class="hljs-comment">// Function call</span>
+ <span class="hljs-title class_">MyFunction</span>();
+
+ <span class="hljs-comment">// Output:</span>
+ <span class="hljs-comment">// Apple</span>
+ <span class="hljs-comment">// 45</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Statement</strong>:</p>
+<ul>
+<li>You can declare many variables in one statement.</li>
+<li>Start the statement with let and separate the variables by comma.</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">let</span> person = <span class="hljs-string">&quot;John Doe&quot;</span>, carName = <span class="hljs-string">&quot;Volvo&quot;</span>, price = <span class="hljs-number">200</span>;
+<span class="hljs-keyword">let</span> name = <span class="hljs-string">&quot;John Doe&quot;</span>; <span class="hljs-comment">//String</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Values</strong>:</p>
+<ul>
+<li>JavaScript has fixed values (called <strong>literals</strong>) and variable values (called <strong>Variables</strong>)</li>
+<li>Literals include <strong>numbers</strong> (with or without decimals) and <strong>strings</strong> (are text, enclosed in double or single quotes).</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">let</span> num = <span class="hljs-number">10.50</span>; <span class="hljs-comment">//Number</span>
+<span class="hljs-keyword">let</span> name = <span class="hljs-string">&quot;John Doe&quot;</span>; <span class="hljs-comment">//String</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Operators</strong>:</p>
+<ul>
+<li>
+<p>JS Uses <strong>arithmetic</strong> operators (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) to compute values.</p>
+</li>
+<li>
+<p>JS  follows PEMDAS:
+Paranthesis
+Exponents
+Multiplication 5 / 5 * 4
+Division
+Addition
+Subtraction
+var num = 5 + (5 * 10) / 6**2 - 1;
+var num = 5 / 5 * 4;</p>
+</li>
+<li>
+<p>Example:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> result = (<span class="hljs-number">5</span> + <span class="hljs-number">6</span>) * <span class="hljs-number">10</span>;
+</code></pre>
+</li>
+<li>
+<p>JS uses an assignment operator ( <code>=</code>) to assign values to variables:</p>
+</li>
+<li>
+<p>Example:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> x, y;
+x = <span class="hljs-number">5</span>;
+y = <span class="hljs-number">6</span>;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Expressions</strong>:</p>
+<ul>
+<li>Expressions combine values, variables, and operators to compute a value.</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">let</span> expressionResult = <span class="hljs-number">5</span> * <span class="hljs-number">10</span>; <span class="hljs-comment">// Evaluates to 50</span>
+
+x * <span class="hljs-number">10</span>  <span class="hljs-comment">//Expressions can also contain variable values</span>
+
+</code></pre>
+<pre><code class="language-javascript"><span class="hljs-comment">//this line of code is commented out</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Hi there&#x27;</span>); <span class="hljs-comment">// Here is another comment</span>
+
+<span class="hljs-comment">//multi-line comments:</span>
+
+<span class="hljs-comment">/* and then you can
+ put anything you
+ want here on
+ multiple lines
+ */</span>
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Comments</strong>:</p>
+<ul>
+<li>Uses <code>//</code> for single-line comments and <code>/* ... */</code> for multi-line comments (comment block)</li>
+<li>Any text between // and the end of the line will be ignored by js(will not be executed).</li>
+<li>Any text between /* and */ will also be ignored.</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>; <span class="hljs-comment">// This code will be executed</span>
+
+<span class="hljs-comment">// x = 10; This code is a comment and will **NOT** be executed</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Identifiers (Names)</strong>:</p>
+<ul>
+<li>Identifiers are used to name variables, keywords, and functions.</li>
+<li>Rules:
+<ul>
+<li>Must start with a letter, <code>$</code>, or <code>_</code>.</li>
+<li>Subsequent characters can be letters, digits, underscores, or dollar signs.</li>
+<li><strong>Numbers are not allowed as the first character.</strong> This way JS can easily distinguish identifiers from numbers.</li>
+</ul>
+</li>
+<li>Example:<pre><code class="language-javascript"><span class="hljs-keyword">let</span> firstName;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Case-Sensitive</strong>:</p>
+<ul>
+<li>Remember that JavaScript is <strong>case-sensitive</strong>, so <code>lastName</code> and <code>lastname</code> are two different variables.</li>
+<li>Example:<pre><code class="language-JS"><span class="hljs-keyword">let</span> lastname, lastName;
+lastName = <span class="hljs-string">&quot;Nadal&quot;</span>;
+lastname = <span class="hljs-string">&quot;Federer&quot;</span>;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Camel Case</strong>:</p>
+<ul>
+<li>Underscore:<pre><code class="language-JS">first_name, last_name, master_card, inter_city.
+</code></pre>
+</li>
+<li>Upper Camel Case (Pascal Case):<pre><code class="language-JS"><span class="hljs-title class_">FirstName</span>, <span class="hljs-title class_">LastName</span>, <span class="hljs-title class_">MasterCard</span>, <span class="hljs-title class_">InterCity</span>.
+</code></pre>
+</li>
+<li><strong>Lower Camel Case</strong> (very popular):<pre><code class="language-JS">firstName, lastName, masterCard, interCity.
+</code></pre>
+</li>
+<li>ATTENTION!! <strong>Hyphens are NOT allowed</strong> in JavaScript. They are reserved for subtractions.</li>
+</ul>
+</li>
+</ul>
+<p><code>Hoisting</code></p>
+<p>It is essentially a very specific way that the javascript interpreter actually reads variables.</p>
+<p>It referes to Where you should define your variables in your program. If you define them in the wrong order then you might run into some odd types of bugs.</p>
+<p>Essentially what the interpreter does with hoisting is: it tries to find every spot where a variable has been declared.</p>
+<p>It's really considered the best practice to assign your variables and to declare them at the very top of the program.</p>
+<pre><code class="language-JS"><span class="hljs-comment">// Hoisted</span>
+name = <span class="hljs-string">&#x27;Kristine&#x27;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name); <span class="hljs-comment">// &#x27;Kristine&#x27;</span>
+<span class="hljs-keyword">var</span> name;
+
+<span class="hljs-comment">// Initializers not hoisted</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(age); <span class="hljs-comment">// undefined</span>
+<span class="hljs-keyword">var</span> age = <span class="hljs-number">33</span>;
+</code></pre>
+<br>
+<p><strong>Syntax Comparison between JS and Python</strong>.</p>
+<p>Here is a side-by-side syntax comparison of Python and JavaScript for common constructs:
+<br></p>
+<p><img src="file:////images/screenshot%20table%20syntax%20python%20vs%20js1.png" alt="Screenshot Table comparison Py vs JS"></p>
+<p>The table highlights syntax differences but the core constructs are similar.</p>
+<p>However it is important to remember that these two programming languages do not necessarily replace each other. As a matter of fact, <strong>you can make the most of their benefits by using them together</strong>. For example, Instagram handles its enormous traffic by doing so – using JavaScript for the client-side and Python for the server-side.</p>
+<br>
+<h1 id="16-why-to-use-js">1.6. Why to use JS</h1>
+<p>Web applications are the dominant way that people interact with the computing universe, and JavaScript is the foundation. Even server applications are increasingly written in JavaScript as programmers turn to <strong>Node.js</strong> for <strong>increased speed and the freedom to run the same code on the server and the client.</strong></p>
+<p>JavaScript is <strong>ubiquitous</strong>. JS is the only programming language that can actually be understood by a web browser.  This provides JavaScript with a great distribution platform. It means that anyone that has a browser, which almost means everyone, can effortlessly run your JavaScript code.</p>
+<p><strong>Some of the world's most powerful applications are built-in JavaScript.</strong> You don't have to go far to find an application that was built using JavaScript. Popular applications such as Gmail, Twitter, and Facebook use JavaScript extensively.</p>
+<p>It's great for working with <strong>automation</strong>. JavaScript is one of the most <strong>powerful tools</strong> you use  <strong>to automate your day-to-day workflow</strong>. JS allows you to automate many of busywork tasks. For example: Imagine you want to update and follow a bunch of people on Instagram or on Linkedin. Instead of having to manually click a button a hundred times to follow that people, you can actually build a very simple JavaScript script that will run directly in the browser and it will automate it and do all that work for you.</p>
+<p>According to Stack Overflow’s <a href="https://survey.stackoverflow.co/2023/">2023 Developer Survey</a>, JavaScript has been <strong>the most popular programming language</strong> for over a decade. Almost 66% of professional developers use this language (only 30% of developers use Java, which ranks number seven).</p>
+<br>
+<p><img src="file:////images/Survey%20JS%20most%20used%20programming%20languages.png" alt="Stack Overflow Developer survey">
+<br></p>
+<p>Source: Stack Overflow Developer Survey</p>
+<p>It looks like it will continue to be a primary language for front-end developers as long as it continues to be <strong>the only language that all browsers understand.</strong></p>
+<p>Given the popularity of JavaScript, it is really <strong>easy to find resources and information</strong> about it. It has a big, vibrant community behind it. In the popular StackOverflow web, there are over a million questions that are related to JavaScript.</p>
+<p>JavaScript has a** huge ecosystem** that provides it with <strong>powerful and engaging tools and libraries</strong>. For example: Electron (for building desktop apps), PhantomJS and CasperJS (for automating web pages), D3.js library(for advanced data visualizations), React Native (for building native mobile apps), Angular, Vue.js.,Phaser(HTML5 games), MogoDB (databases), Three.js (for visual and animations), IBM Watson (cognitive applications that make use of Artificial Intelligence ), etc.</p>
+<p>JavaScript’s ubiquity and adaptability make it indispensable for modern software development, from small interactive web components to large-scale applications across platforms.</p>
+<br>
+<h1 id="17-uses-of-javascript">1.7. Uses of JavaScript</h1>
+<p>JavaScript is used for a <strong>multitude of purposes</strong> across web development, mobile app development, server-side applications, and more. Here are some common uses of JavaScript:</p>
+<ul>
+<li>
+<p><strong>Web Development:</strong></p>
+<ul>
+<li>
+<p><strong>Dynamic Web Pages:</strong> JavaScript manipulates HTML and CSS, enabling interactive user experiences.</p>
+</li>
+<li>
+<p><strong>Form Validation:</strong> It validates user input on the client-side before sending data to the server.</p>
+</li>
+<li>
+<p><strong>Interactive Web Features:</strong> Slideshows, carousels, and modals enhance user engagement.</p>
+</li>
+<li>
+<p><strong>Single-Page Applications</strong> (SPAs): JavaScript frameworks like Angular, React, and Vue.js create SPAs without page reloading.</p>
+</li>
+<li>
+<p><strong>Real-Time Updates:</strong> Content updates without page refresh, useful for stock tickers, news feeds, and social media timelines.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Server-Side Applications:</strong>
+Node.js: JavaScript on the server side for scalable network applications.</p>
+</li>
+<li>
+<p><strong>Mobile App Development:</strong>
+React Native: Uses JavaScript to create native apps for iOS and Android.</p>
+</li>
+<li>
+<p><strong>Cross-Platform Desktop Applications:</strong>
+Electron: Developers create desktop apps using JavaScript.</p>
+</li>
+<li>
+<p><strong>Web Browsers Extensions and Plugins:</strong></p>
+<ul>
+<li>Enhances user browsing experiences by creating extensions for browsers like Chrome and Firefox.</li>
+</ul>
+</li>
+<li>
+<p><strong>Animations and Visual Enhancements:</strong>
+JavaScript powers web animations, making websites visually appealing.</p>
+</li>
+</ul>
+<ul>
+<li><strong>Testing and Automation:</strong>
+Tools like Jest and Selenium automate web application testing.</li>
+</ul>
+<br>
+<p>Essentially, JavaScript's <strong>versatility</strong> allows it to be used virtually everywhere, from small interactive web components to large-scale applications across various platforms.</p>
+<h1 id="18-references">1.8. References</h1>
+<p>mdn
+<a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Language_overview">mdn docs</a></p>
+<p><a href="https://techbeacon.com/app-dev-testing/javascript-vs-other-languages-live-long-prosper">JavaScript vs. other languages: Live long and prosper?</a></p>
+<p>If you'd like to explore more, you can refer to resources like <a href="https://www.w3schools.com/js/js_syntax.asp">W3Schools</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/javascript">MDN Web Docs</a></p>
+<p><a href="https://www.w3schools.com/js/js_syntax.asp">JavaScript syntax</a></p>
+<p><a href="https://javascript.info/">The Modern JavaScript Tutorial</a></p>
+<p><a href="https://www.w3schools.com/js/js_examples.asp">JavaScript examples: What can JavaScript do?</a></p>
+<p><a href="#index"> <span style="color: #blue; font-size: 30px;">↑</span>
+Back to Top</a></p>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

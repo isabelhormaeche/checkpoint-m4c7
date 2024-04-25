@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>3&period;  Which are the three String functions in JS&quest;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <div id="index"></div>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+<h1 id="3--which-are-the-three-string-functions-in-js">3.  Which are the three String functions in JS?</h1>
+<ul>
+<li><a href="#3--which-are-the-three-string-functions-in-js">3.  Which are the three String functions in JS?</a>
+<ul>
+<li><a href="#31-length-property">3.1. Length property</a></li>
+<li><a href="#32-basic-string-methods">3.2. Basic String Methods</a></li>
+<li><a href="#33-regular-expressions">3.3. Regular expressions</a></li>
+<li><a href="#34-slice-case-and-trim-functions">3.4. Slice, case, and trim functions</a></li>
+<li><a href="#35-references">3.5. References</a></li>
+</ul>
+</li>
+</ul>
+<p>Normally, strings like &quot;Rafael Nadal&quot;, cannot have methods or properties because they are not objects.</p>
+<p>But with JavaScript, methods and properties are also available to strings, because <strong>JavaScript treats strings as objects</strong> <strong>when executing methods and properties.</strong></p>
+<pre><code class="language-NOTE">NOTE:
+
+All string methods return a new value.
+
+They do not change the original variable.
+</code></pre>
+<br>
+<p><img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\screenshot%20JS%20methods.png" alt="Full list of JS methods">
+<img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\screenshot%20JS%20methods1.png" alt="Full list of JS methods1">
+Source: W3schools</p>
+<p>Essentially a <strong>function allows you to encapsulate behavior</strong>. In this case, we do not need to create the functions, these are <strong>provided in the core javascript library</strong>, so we can simply call them.</p>
+<p>We can have an object and we will <strong>be able</strong> to either <strong>change</strong> it or make certain kinds of <strong>value queries</strong> on it-all kinds of things.</p>
+<p>The nice thing that functions allow us to do is to perform a task again and again <strong>without having to repeat any code</strong>.</p>
+<h2 id="31-length-property">3.1. Length property</h2>
+<p>For example, the <strong>length</strong> property returns the length of a string:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> str = <span class="hljs-string">&#x27;The quick brown fox jumped over the lazy dog&#x27;</span>;
+
+str.<span class="hljs-title function_">length</span>(); <span class="hljs-comment">// VM2349:1 Uncaught TypeError: str.length is not a function</span>
+
+str.<span class="hljs-property">length</span>; <span class="hljs-comment">// 44</span>
+</code></pre>
+<p>Here we can see <strong><code>.length</code></strong> is an <strong>attribute</strong> of the string and <strong>not</strong> a function. Without parentheses at the end.
+<br>
+<br></p>
+<h2 id="32-basic-string-methods">3.2. Basic String Methods</h2>
+<p>In the rest of examples, bellow, all are going to be <strong>functions</strong>. It's going to follow the pattern of having parens <strong><code>( )</code></strong> at the very end. Sometimes we will also pass an argument to it.</p>
+<p>Javascript strings are primitive and <strong>immutable</strong>: All string methods <strong>produces a new string without altering the original string</strong>.</p>
+<p>We can do useful operations on strings with <strong>built-in methods</strong>, such as finding the <strong>length</strong> of a text string, <strong>joining</strong> and <strong>splitting</strong> strings, <strong>substituting</strong> one <strong>character</strong> in a string for another, and more.</p>
+<pre><code class="language-Note">
+IMPORTANT!
+
+The **variables** in javascript when they get passed to functions they **simply pass the value**. They don't pass in, a reference to the variable. In other words, when something changes that or alters it, **it doesn't** go back and **change the original variable**. It simply **returns an updated set of values**. 
+
+We could use it, we could store it in another variable, we could wire that up into another function. Anything like that and that would all work. But we still can be confident that our variable string didn't get changed.
+</code></pre>
+<p>There are many string functions but if I have to choose only three, I choose:</p>
+<ul>
+<li>
+<p><strong>slice()</strong>: Extracts a part of a string and returns a new string.</p>
+</li>
+<li>
+<p><strong>search()</strong>: Searches a string for a value, or regular expression, and returns the index (position) of the match.</p>
+</li>
+<li>
+<p><strong>replace()</strong>: Searches a string for a pattern, and returns a string where the first match is replaced.</p>
+</li>
+</ul>
+<p>But there are a few more functions that you'll potentially use quite often as well. We can learn about them with the aid of some examples:</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> str = <span class="hljs-string">&#x27;The quick brown fox jumped over the lazy dog&#x27;</span>;
+
+<span class="hljs-comment">// charAt() -&gt; Returns the character at a specified index (position)</span>
+
+<span class="hljs-comment">//is short for character</span>
+str.<span class="hljs-title function_">charAt</span>(<span class="hljs-number">2</span>); <span class="hljs-comment">// &quot;e&quot; finds whatever letter is at the index of two</span>
+str.<span class="hljs-title function_">charAt</span>(<span class="hljs-number">200</span>); <span class="hljs-comment">// &quot;&quot; a space</span>
+
+
+<span class="hljs-comment">// concat() -&gt; Returns two or more joined strings</span>
+
+str.<span class="hljs-title function_">concat</span>(<span class="hljs-string">&#x27; again and again&#x27;</span>); <span class="hljs-comment">// &quot;The quick brown fox jumped over the lazy dog again and again&quot;</span>
+
+<span class="hljs-comment">// combined what we passed as the argument to concat() into and appended it to the end of our string.</span>
+<span class="hljs-comment">//IMPORTANT!  you&#x27;re NOT changing the string, you&#x27;re simply changing the value that got returned from running that concat function on it.</span>
+
+<span class="hljs-comment">// Keep it in a NEW STRING: </span>
+<span class="hljs-comment">//If you wanted to permanently connect those two then you put that in a new string, your new string now contains those values. But the preexisting string doesn&#x27;t.</span>
+<span class="hljs-keyword">var</span> newStr = str.<span class="hljs-title function_">concat</span>(<span class="hljs-string">&#x27; again and again&#x27;</span>);
+str; <span class="hljs-comment">// &quot;The quick brown fox jumped over the lazy dog&quot;</span>
+
+
+<span class="hljs-comment">// Other functions:</span>
+
+<span class="hljs-comment">// INCLUDES() -&gt; Returns if a string contains a specified value</span>
+str.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&#x27;quick&#x27;</span>); <span class="hljs-comment">// true</span>
+
+str.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&#x27;Foo&#x27;</span>); <span class="hljs-comment">// false</span>
+
+str.<span class="hljs-title function_">endsWith</span>(<span class="hljs-string">&#x27;dog&#x27;</span>); <span class="hljs-comment">// true</span>
+str.<span class="hljs-title function_">endsWith</span>(<span class="hljs-string">&#x27;g&#x27;</span>); <span class="hljs-comment">// also true</span>
+str.<span class="hljs-title function_">endsWith</span>(<span class="hljs-string">&#x27;lazy dog&#x27;</span>); <span class="hljs-comment">// also true</span>
+<span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> It doesn&#x27;t check for words it checks just character by character.</span>
+<span class="hljs-comment">// Useful:  when looking through some raw data files and you want to find out which ones end in a semi-colon.</span>
+
+</code></pre>
+<br>
+<p><img src="file:///c:\Users\isabe\code\checkpoint_m4c7\images\scn-javascript-01.svg" alt="JS scn"></p>
+<br>
+<h2 id="33-regular-expressions">3.3. Regular expressions</h2>
+<p>How to integrate <strong>Regular Expressions</strong> in order <strong>to find patterns</strong> in string based data.</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> str = <span class="hljs-string">&#x27;The quick brown fox jumped over the lazy dog&#x27;</span>;
+
+<span class="hljs-comment">// REPEAT()-----------------------------</span>
+<span class="hljs-comment">//Returns a new string with a number of copies of a string</span>
+
+<span class="hljs-comment">// I can pass (5) as an argument in the parens in however many times I want to repeat that line.</span>
+str.<span class="hljs-title function_">repeat</span>(<span class="hljs-number">5</span>); <span class="hljs-comment">// &quot;The quick brown fox jumped over the lazy dogThe quick brown fox jumped over the lazy dogThe quick brown fox jumped over the lazy dogThe quick brown fox jumped over the lazy dogThe quick brown fox jumped over the lazy dog&quot;</span>
+
+<span class="hljs-comment">//this did not alter the original string. This simply returned a value.</span>
+
+
+<span class="hljs-comment">// MATCH()----------------------------</span>
+<span class="hljs-comment">// Searches a string for a value, or a regular expression, and returns the matches</span>
+
+<span class="hljs-comment">//in order to see if something that you&#x27;re wanting to check against actually is a match or not.</span>
+<span class="hljs-comment">// for example: is required for things such as web form validations (form for an e-mail, form for a phone number).</span>
+
+<span class="hljs-comment">// take in a regular expression and then it tells you if it was a match.</span>
+
+<span class="hljs-comment">// Let´s build a regular expression matcher for phone numbers. It&#x27;s going to compare this pattern and see if match what&#x27;s contained in the string:</span>
+str.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/</span>) <span class="hljs-comment">// it returns null (no error)</span>
+
+<span class="hljs-comment">//Another example with a phone number--&gt; now gives us a full object back.</span>
+<span class="hljs-string">&#x27;555-555-5555&#x27;</span>.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/</span>) <span class="hljs-comment">// (4) [&quot;555-555-5555&quot;, &quot;555-&quot;, undefined, &quot;555-&quot;, index: 0, input: &quot;555-555-5555&quot;]0: &quot;555-555-5555&quot;1: &quot;555-&quot;2: undefined3: &quot;555-&quot;index: 0input: &quot;555-555-5555&quot;length: 4__proto__: Array(0)</span>
+
+
+
+<span class="hljs-comment">// REPLACE ()-----------------------------</span>
+<span class="hljs-comment">// Searches a string for a pattern, and returns a string where the first match is replaced</span>
+<span class="hljs-comment">// Takes in -&gt; two arguments. The first is what you&#x27;re searching for (Fox) and the second argument separated by a comma is what you want to replace it with(wolf).</span>
+
+str.<span class="hljs-title function_">replace</span>(<span class="hljs-string">&#x27;fox&#x27;</span>, <span class="hljs-string">&#x27;wolf&#x27;</span>); <span class="hljs-comment">// &quot;The quick brown wolf jumped over the lazy dog&quot;</span>
+
+<span class="hljs-comment">// You could pass in a regular expression as first argument because there are many times where you don&#x27;t know what you&#x27;re looking for. You may be looking just for a pattern.</span>
+
+
+
+<span class="hljs-comment">// SEARCH ()----------------------------------</span>
+<span class="hljs-comment">// Searches a string for a value, or regular expression, and returns the index (position) of the match</span>
+
+<span class="hljs-comment">//  it looks and when it finds a pattern that it matches with, then it will actually return the index</span>
+
+<span class="hljs-string">&#x27;555-555-5555 is my phone number&#x27;</span>.<span class="hljs-title function_">search</span>(<span class="hljs-regexp">/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/</span>) <span class="hljs-comment">// 0 -&gt; means that it found it at the zeroth index.</span>
+
+<span class="hljs-comment">// &#x27;foo&#x27;.search(/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/) // -1 -&gt; means that it means it didn&#x27;t find anything.</span>
+
+
+<span class="hljs-string">&#x27;Hi, 555-555-5555 is my phone number&#x27;</span>.<span class="hljs-title function_">search</span>(<span class="hljs-regexp">/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/</span>) <span class="hljs-comment">// 4 -&gt; means that it found it at the 4th index.</span>
+
+
+
+<span class="hljs-comment">// INDEXES</span>
+
+<span class="hljs-keyword">var</span> str = <span class="hljs-string">&#x27;The quick brown fox jumped over the lazy dog&#x27;</span>;
+
+<span class="hljs-comment">// indexOf () ---------------------------------------------</span>
+<span class="hljs-comment">// Returns the index (position) of the first occurrence of a value in a string</span>
+
+<span class="hljs-comment">// looks through the whole string, once it finds the very first instance of what it&#x27;s searching for it just turns that index</span>
+str.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&#x27;jumped&#x27;</span>); <span class="hljs-comment">// 20 -&gt; is index 20 but it is the index of the FIRST word that it finds.</span>
+
+
+<span class="hljs-comment">// lastIndex() ------------------------------------------------</span>
+<span class="hljs-comment">//it goes through every one it finds, every one of the patterns or the words we&#x27;re looking for. And then it returns the last one that it found.</span>
+
+str.<span class="hljs-title function_">lastIndexOf</span>(<span class="hljs-string">&#x27;jumped&#x27;</span>); <span class="hljs-comment">// 20</span>
+
+
+<span class="hljs-comment">// Example to see lastIndex() it returns the LAST one that it found.</span>
+<span class="hljs-keyword">var</span> str2 = str.<span class="hljs-title function_">concat</span>(<span class="hljs-string">&#x27;again and again&#x27;</span>);
+<span class="hljs-comment">//var str2 = &#x27;The quick brown fox jumped over the lazy dog again and again&#x27;;</span>
+
+str2.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&#x27;again&#x27;</span>); <span class="hljs-comment">// 44</span>
+
+str2.<span class="hljs-title function_">lastIndexOf</span>(<span class="hljs-string">&#x27;again&#x27;</span>); <span class="hljs-comment">// 54</span>
+</code></pre>
+<br>
+<h2 id="34-slice-case-and-trim-functions">3.4. Slice, case, and trim functions</h2>
+<p>Now we'll walk through the <strong>slice(), trim()</strong> and case (<strong>toUpperCase()</strong> and <strong>toLowerCase()</strong>) functions. We'll also examine how we can chain functions together.</p>
+<pre><code class="language-JS"><span class="hljs-keyword">var</span> str = <span class="hljs-string">&#x27;The quick brown fox jumped over the lazy dog&#x27;</span>;
+
+<span class="hljs-comment">//SLICE() -----------------------------------------------</span>
+<span class="hljs-comment">// Extracts a part of a string and returns a new string</span>
+
+<span class="hljs-comment">//Three ways that we can use slice:</span>
+
+<span class="hljs-comment">//1) gives you all of the items and you&#x27;re counting from left to right:</span>
+<span class="hljs-comment">//pass an index value: it will return all of the items to the right of that. (if you know that you have some values that you want to skip over and you don&#x27;t care about them)</span>
+
+str.<span class="hljs-title function_">slice</span>(<span class="hljs-number">10</span>); <span class="hljs-comment">// &quot;brown fox jumped over the lazy dog&quot;</span>
+
+str.<span class="hljs-title function_">charAt</span>(<span class="hljs-number">10</span>); <span class="hljs-comment">//&quot;b&quot; --&gt; to see where that&#x27;s at. so it grabs the b all the way to the end.</span>
+
+
+<span class="hljs-comment">// 2) go backwards-&gt; If you use negatives you&#x27;re counting backwards</span>
+
+str.<span class="hljs-title function_">slice</span>(-<span class="hljs-number">8</span>); <span class="hljs-comment">// &quot;lazy dog&quot; --&gt; still finding an index and it&#x27;s returning everything from that index all the way to the right</span>
+
+
+<span class="hljs-comment">// 3) grab a slice inside of the string: passing two arguments.</span>
+
+str.<span class="hljs-title function_">slice</span>(<span class="hljs-number">4</span>, <span class="hljs-number">10</span>); <span class="hljs-comment">// &quot;quick &quot;</span>
+str.<span class="hljs-title function_">slice</span>(<span class="hljs-number">4</span>, <span class="hljs-number">9</span>); <span class="hljs-comment">// &quot;quick&quot;</span>
+<span class="hljs-comment">//(q is 4, K is 8, space is 9, b is 10)</span>
+
+<span class="hljs-comment">// TRIM METHOD -----------------------------------------------</span>
+<span class="hljs-comment">// returns a string with removed whitespaces</span>
+
+<span class="hljs-comment">//to clean up user data</span>
+<span class="hljs-keyword">var</span> messyString = <span class="hljs-string">&#x27;    Hi there    &#x27;</span>; <span class="hljs-comment">// undefined</span>
+messyString;   <span class="hljs-comment">// &#x27;    Hi there    &#x27;--&gt; If we call messyString you can see that it keeps all those spaces.</span>
+
+messyString.<span class="hljs-title function_">trim</span>(); <span class="hljs-comment">// &quot;Hi there&quot; </span>
+<span class="hljs-comment">// Example we can combine them:</span>
+str.<span class="hljs-title function_">slice</span>(<span class="hljs-number">4</span>, <span class="hljs-number">10</span>).<span class="hljs-title function_">trim</span>(); <span class="hljs-comment">// &quot;quick&quot; --&gt;it removes the space</span>
+
+</code></pre>
+<p>These functions can be <strong>chained</strong> together.</p>
+<p>For example, we can chain the slice() and the trim() function.There will be times where you want to slice something and then call trim to make sure that we have some nice clean values afterwards.</p>
+<pre><code class="language-JS">str.<span class="hljs-title function_">slice</span>(<span class="hljs-number">4</span>, <span class="hljs-number">10</span>); <span class="hljs-comment">// &quot;quick &quot;</span>
+
+<span class="hljs-comment">// now we chain slice() and trim() functions:</span>
+str.<span class="hljs-title function_">slice</span>(<span class="hljs-number">4</span>, <span class="hljs-number">10</span>).<span class="hljs-title function_">trim</span>(); <span class="hljs-comment">// &quot;quick&quot; --&gt;it removes the space after quick</span>
+</code></pre>
+<p>There are some recommended principles that say you <strong>don't really want to ever have more than two to three different items</strong> that are chained together.</p>
+<p>Anything above that it can lead to some very challenging bugs to get fixed and it's also very hard to refactor that code and clean it up.</p>
+<p>For converting the values to uppercase or lowercase we have: toUpperCase() and toLowerCase().</p>
+<pre><code class="language-JS">
+<span class="hljs-comment">// toUpperCase () -&gt; to convert all of the values to uppercase.</span>
+
+str.<span class="hljs-title function_">toUpperCase</span>(); <span class="hljs-comment">// &quot;THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG&quot;</span>
+
+
+
+<span class="hljs-comment">// toLowerCase() -&gt; to convert all of the values to lowercasd.</span>
+str.<span class="hljs-title function_">toLowerCase</span>(); <span class="hljs-comment">// &quot;the quick brown fox jumped over the lazy dog&quot;</span>
+</code></pre>
+<p><strong>Note</strong></p>
+<p>The <strong><code>at()</code></strong>** method** is a new addition to JavaScript.</p>
+<p>It allows the use of negative indexes while charAt() do not.</p>
+<p>Now you can:</p>
+<pre><code class="language-JS"><span class="hljs-comment">// use at() :</span>
+
+<span class="hljs-keyword">let</span> myString = <span class="hljs-string">&quot;Hello, World!&quot;</span>;
+<span class="hljs-keyword">let</span> char = myString.<span class="hljs-title function_">at</span>(-<span class="hljs-number">2</span>); <span class="hljs-comment">// Also returns &quot;d&quot;</span>
+
+
+<span class="hljs-comment">// instead of chartAt() and length:</span>
+
+<span class="hljs-keyword">let</span> myString = <span class="hljs-string">&quot;Hello, World!&quot;</span>;
+<span class="hljs-keyword">let</span> char = myString.<span class="hljs-title function_">charAt</span>(myString.<span class="hljs-property">length</span> - <span class="hljs-number">2</span>); <span class="hljs-comment">// Returns &quot;d&quot;</span>
+
+</code></pre>
+<br>
+<p>I´m including a link to the <strong>documentation</strong> that shows all of the Srping functions <a href="https://www.w3schools.com/jsref/jsref_obj_string.asp">from W3 Schools: <strong>Full list of String functions</strong>.</a></p>
+<br>
+<h2 id="35-references">3.5. References</h2>
+<ul>
+<li>
+<p><a href="https://www.w3schools.com/js/js_string_methods.asp">Basic String Methods</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods">mdn web docs: Useful string methods</a></p>
+</li>
+<li>
+<p><a href="https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/tasks/strings/marking.md">mdn: Tasks  to demonstrate an understanding of the JavaScript features</a></p>
+</li>
+</ul>
+<p><a href="#index"> <span style="color: #blue; font-size: 30px;">↑</span>
+Back to Top</a></p>
+<br>
+<p><sub><a href="README.html">&lt;&lt;Back to README</a></sub></p>
+
+            
+            
+        </body>
+        </html>
